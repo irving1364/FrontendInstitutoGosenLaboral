@@ -1,0 +1,87 @@
+<div id="login" class="flex-scrollable" layout="column" ms-scroll>
+  <div id="login-form-wrapper" layout="column" layout-align="center center">
+      <div id="login-form" class="md-whiteframe-8dp">
+        <img src="assets/varias/OK_LOGO.png" alt="">
+      </img>
+          <!--div class="logo md-accent-bg">
+              <span>G</span>
+          </div-->
+
+          <div class="title" >Ingresa en tu cuenta!</div>
+
+          <form name="loginForm" novalidate>
+              <md-input-container class="md-block" md-no-float>
+                  <input type="text" name="email" ng-model="command.email" placeholder="Usuario"
+                         required>
+                  <!--input type="email" name="email" ng-model="command.email" placeholder="Email"
+                         ng-pattern="/^.+@.+\..+$/" required-->       
+                  <div ng-messages="loginForm.email.$error" role="alert" multiple>
+                      <div ng-message="required">
+                          <span>El Usuario es requerido</span>
+                      </div>
+                      <!--div ng-message="pattern">
+                          <span>Usuario no es valido</span>
+                      </div-->
+                  </div>
+              </md-input-container>
+
+              <md-input-container class="md-block" md-no-float>
+                  <input type="{{typePassword}}" name="password" ng-model="command.pass" placeholder="Contraseña"
+                          required>
+                    <md-icon ng-if="typePassword === 'password'" ng-click="togglePassword('text')" style="display:inline-block;">
+                       <i class="fa-solid fa-eye"></i>
+                    </md-icon>
+                    <md-icon ng-if="typePassword === 'text'" ng-click="togglePassword('password')" style="display:inline-block;">
+                      <i class="fa-solid fa-eye-slash"></i>
+                   </md-icon>
+                    <div ng-messages="loginForm.password.$error" role="alert">
+                      <div ng-message="required">
+                          <span>Contraseña es requerida</span>
+                      </div>
+                  </div>
+              </md-input-container>
+
+
+              <!--md-input-container style="margin-top: -4%;">
+                <label>Seleccione su Rol</label>
+                <md-select style="width: 320px;" ng-model="command.cod_rol" required>
+                  <md-option ng-repeat="rols in rol" ng-value="rols.cod">
+                    {{rols.rol}}
+                  </md-option>
+                </md-select>
+              </md-input-container-->
+            
+        
+            <div flex="100">
+              <div layout  >  
+                <md-input-container style="margin-top: -2%;">
+                  <label>Seleccione el Año</label>
+                  <md-select style="width: 320px;" ng-model="command.cod_anio" required>
+                    <md-option ng-repeat="anios in anio" ng-value="anios.cod">
+                      {{anios.anio}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+              </div>
+            </div>    
+           
+
+
+              <md-button type="button" ng-click="login(command)" class="md-raised md-accent submit-button" aria-label="Ingresar"
+                         ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                  Ingresar
+              </md-button>
+          </form>
+
+          <div class="separator">
+              <span class="text" ></span>
+          </div>
+
+          
+          <div style="margin-top: -4%;" class="register" layout="row" layout-sm="column" layout-align="center center">
+              <a ui-sref="app.recuperacion" class="forgot-password md-accent-color"
+                     >Recuperar Contraseña?</a>
+          </div>
+      </div>
+  </div>
+</div>

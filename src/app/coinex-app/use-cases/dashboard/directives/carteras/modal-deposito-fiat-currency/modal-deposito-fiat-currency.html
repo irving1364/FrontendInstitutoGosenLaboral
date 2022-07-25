@@ -1,0 +1,129 @@
+<style>
+	md-dialog {
+	    opacity: 0;
+	    min-width: 500px;
+	    max-width: 500px;
+	    min-height: 300px;
+	    max-height: 400px;
+	    position: relative;
+	    overflow: auto;
+	    box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);
+	    display: -webkit-box;
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-box-orient: vertical;
+	    -webkit-box-direction: normal;
+	    -webkit-flex-direction: column;
+	    flex-direction: column;
+	}
+
+	.modal_title {
+		padding: 20px; 
+		border-bottom: 1px solid silver;
+		font-size: 1.2em;
+		color: #075777
+	}
+
+	md-input-container md-select {
+    	padding: 2px 8px;
+  	}
+
+  	md-input-container{
+    	margin-bottom: 0px; 
+    	margin-top: 0px;
+  	}
+
+  	.boton_action {
+   		margin-top: 8px;
+  	}
+
+  	  
+  	.deposito_header > div:first-child {
+    	font-size: 1.5em;
+    	margin-left: 20px;
+  	}
+
+  	.content-modal-dashboard {
+  		padding-right: 2em;
+  		padding-left:  2em;
+  		padding-bottom: 1em;
+  	}
+
+  	.form_row .form-control input {
+    	padding: 8px 10px;
+    	border: 1px solid silver;
+	}
+
+</style>
+
+
+<md-dialog>
+
+	<div class="modal_title">
+		Depositar {{balance.nick}}
+	</div>
+    <form name="form" class="content-modal-dashboard"> 
+		<div layout layout="row" flex="100" class="form_row" layout-align="center center">
+			<div flex="30">Banco</div>
+			<div flex="70" >
+	            <md-input-container>
+	            <md-select required=""
+	                class="md-no-underline"
+	                ng-model="command.bancoSeleccionado">
+	                <md-option 
+	                   	ng-repeat="banco in listaBancos"
+	                   	ng-value="banco.id">
+	                   	{{banco.bankName}}
+	                </md-option>
+	            </md-select>
+	            </md-input-container>
+			</div>
+		</div>
+
+		<div layout layout="row" flex="100" class="form_row" layout-align="center center">
+			<div flex="30">Monto</div>
+			<div class="form-control" flex="100" layout>
+		        <input 
+		            flex="80"
+		            type="number"
+		            required="" 
+		            class="form-control" 
+		            ng-model="command.monto">
+            		<span flex="20" class="addon">{{balance.currency}}</span>
+          		<div ng-messages="form.monto.$error">
+              		<div ng-message="required" class="my-message"></div>
+            	</div>
+      		</div>
+		</div>
+
+	    
+	  	<div layout layout="row"  flex="100" class="form_row" layout-align="center center">
+	      	<div flex="30">Referencia</div>	      		
+	      	<div class="form-control single" flex="100">
+          		<input 
+            		name="reference"
+            		required="" 
+            		class="form-control"
+            		ng-model="command.reference">
+          			<div ng-messages="form.reference.$error">
+              			<div ng-message="required" class="my-message"></div>
+            		</div>
+      		</div>
+	  	</div>
+		
+	</form>
+
+	<md-divider></md-divider>
+
+	<div layout layout-align="end center" class="boton_action">
+	  	<md-button ng-click="close()">Cancelar</md-button>
+	  	<md-button ng-disabled="form.$invalid" ng-click="deposito()" class="md-raised md-primary" >
+	    	Depositar
+	  	</md-button>
+
+	</div>
+</md-dialog>
+<!--
+<deposito-fiat-wallet balance=balance>
+</deposito-fiat-wallet>
+-->

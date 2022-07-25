@@ -1,0 +1,154 @@
+<div layout layout-align="start center">
+	<div class="wallet_title">{{orden.text.wallets.title}}</div>
+</div>
+
+<div class="wallets_wrapper" layout layout-wrap>
+	<wallet 
+		flex="25"
+		layout="column"
+		ng-repeat="wallet in orden.getCriptoWallets()"
+		wallet-select-expresion="orden.isWalletSelected(wallet)"
+		wallet-input="wallet"
+		on-selected="orden.onSelectWallet(wallet)">
+	</wallet>
+</div>
+
+<wallet-total wallet-selected="orden.getWalletSelected()"></wallet-total>
+
+<form name="form">
+	
+	<div layout="column" class="orden_compra_wrapper">
+
+		<div flex="100" layout>
+
+			<div flex="50">
+				<div class="input-group">
+					<label>{{orden.text.cantidadNominal.label}}</label>
+				  	<input 
+				  		type="number" 
+				  		required="" 
+				  		name="cantidadNominal"
+				  		class="form-control" 
+				  		placeholder="{{orden.text.cantidadNominal.placeholder}}"
+				  		ng-change="orden.onChangeCantidadNominal()"
+			        	ng-model="orden.cantidadNominal">
+				  	<span class="input-group-addon">{{orden.walletSelected.currency}}</span>
+				  	<div ng-messages="form.cantidadNominal.$error" role="alert" multiple="">
+				        <div ng-message="number" class="my-message">
+				        	{{orden.text.cantidadNominal.errors.number}}
+			        	</div>
+				        <div ng-message="required" class="my-message">
+				        	{{orden.text.cantidadNominal.errors.required}}
+			        	</div>
+			      	</div>
+				</div>
+			</div>
+
+			<div flex="50" layout>
+			  	<md-input-container flex="100">
+	        		<label>{{orden.text.currencyLimit.label}}</label>
+			        <md-select 
+			        	class="md-no-underline"
+			        	ng-disabled="orden.currenciesLimitDisabled"
+			        	ng-change="orden.onChangeCurrencyLimit()" 
+			        	ng-model="orden.currencyLimite">
+			            <md-option 
+			            	ng-repeat="walletLimit in orden.walletsLimit"
+			            	ng-value="walletLimit.currency">
+			              {{walletLimit.currency}}
+			            </md-option>
+			  		</md-select>
+			  	</md-input-container>
+			</div>
+
+		</div>
+
+		<div flex="100" layout ng-hide="orden.cantidadLimiteLineHide()">
+
+			<div flex="50">
+
+				<div class="input-group">
+					<label>
+						<span>{{orden.text.cantidadLimite.label}}</span>
+						<span>{{orden.walletSelected.currency}}</span>
+					</label>
+				  	<input 
+				  		type="number" 
+				  		required="" 
+				  		name="cantidadLimite"
+				  		class="form-control"
+				  		placeholder="Ingrese precio"
+				  		ng-disabled="orden.cantidaLimiteHide()"
+				  		ng-change="orden.onChangeCantidadLimite()" 
+			        	ng-model="orden.cantidadLimite">
+				  	<span class="input-group-addon">{{orden.currencyLimite}}</span>
+				  	<div ng-messages="form.cantidadLimite.$error" role="alert" multiple="">
+				        <div ng-message="number" class="my-message">
+				        	{{orden.text.cantidadLimite.errors.number}}
+			        	</div>
+				        <div ng-message="required" class="my-message">
+			        		{{orden.text.cantidadLimite.errors.required}}
+		        		</div>
+			      	</div>
+				</div>
+
+				<div>
+					<label>{{orden.text.limite.label}}</label>
+					<md-radio-group ng-model="orden.tipoOrden" ng-change="orden.onChangeTipoOrden()">
+						<md-radio-button value="{{orden.TIPO_ORDEN.CUSTOM}}">
+				      		{{orden.text.limite.custom}}
+			      		</md-radio-button>
+						<md-radio-button value="{{orden.TIPO_ORDEN.MERCADO}}" class="md-primary">
+				      		{{orden.text.limite.mercado}}
+			      		</md-radio-button>
+		    		</md-radio-group>
+				</div>
+
+			</div>
+
+			<div flex="50">
+
+				<div class="input-group">
+					<label>
+						<span>{{orden.text.saldoRequerido.label}}</span>
+						<span>{{ orden.currencyLimite || '---' }}</span>
+					</label>
+				  	<input 
+				  		type="text" 
+				  		class="form-control" 
+				  		readonly="" 
+			        	ng-model="orden.saldoRequerido">
+				  	<span class="input-group-addon">{{orden.currencyLimite}}</span>
+				</div>
+
+				<div>
+					<label>{{orden.text.saldoInsuficiente.label}}</label>
+					<md-radio-group ng-model="orden.status">
+						<md-radio-button value="{{orden.STATUS_ORDEN.PAUSAR}}">
+				      		{{orden.text.saldoInsuficiente.pausar}}
+			      		</md-radio-button>
+				     	<md-radio-button value="{{orden.STATUS_ORDEN.CANCELAR}}" class="md-primary">
+				      		{{orden.text.saldoInsuficiente.cancelar}}
+			      		</md-radio-button>
+		    		</md-radio-group>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div layout layout-align="center center" class="button_wrapper">
+		
+		<md-button
+			class="md-raised md-primary"
+			ng-click="confirm()"
+			ng-disabled="form.$invalid"
+			flex="30">
+			{{orden.text.accion}}
+		</md-button>
+
+	</div>
+
+</form>

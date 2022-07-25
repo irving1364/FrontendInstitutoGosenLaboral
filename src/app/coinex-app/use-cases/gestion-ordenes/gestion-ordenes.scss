@@ -1,0 +1,88 @@
+.orden_compra_wrapper {
+	padding: 10px; 
+}
+
+.wallets_wrapper {
+	padding: 10px;
+}
+
+.wallet_title {
+	padding: 20px;
+	font-size: 1.6em;
+}
+
+.md-select-menu-container.md-active md-select-menu {
+	background: white;
+}
+
+.button_wrapper {
+	margin-top: 20px;
+}
+
+.button_wrapper__button {
+	padding: 10px 0px;
+}
+
+
+.input-group  {
+
+	margin-top: 2px;
+	color: grey;
+	width: 100%;
+	position: relative;
+
+	.form-control {
+		padding: 15px;
+		width: 80%;
+		border:1px solid silver;
+		border-right-width: 0px;
+	}
+	
+	.input-group-addon {
+		width: 10%;
+		padding: 13px;
+		border:1px solid silver;
+		border-left-width: 0px;
+		position: absolute;
+		top: 22px;
+		right: 10%;
+		background: #efefef;
+		color: #ff9d00;
+	}
+
+	label {
+
+		span:last-child{
+			color: #ff9d00;
+		}
+
+	}
+
+	& + div {
+		margin: 10px 0px 0px 20px;
+	}
+
+	.my-message {
+		color: red;
+		font-size: .8em;
+		margin-left: 5px
+	}
+
+}
+
+md-input-container {
+
+
+	label {
+		font-size: 1.3em
+	}
+}
+
+md-select.md-default-theme[disabled] .md-select-value, md-select[disabled] .md-select-value{
+	background-image: none;
+}
+
+md-radio-button {
+	margin: 5px 0px 5px 20px;
+}
+

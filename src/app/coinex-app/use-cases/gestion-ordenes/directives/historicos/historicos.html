@@ -1,0 +1,249 @@
+<style>
+  
+  .cartera > div {
+    padding-left: 20px;
+    border-bottom: 1px dotted silver;
+  }
+  
+  .cartera > div:last-child {
+    border-bottom: 1px solid silver;
+    padding: 10px;
+  }
+
+  .cartera_descripcion img{
+    width: 25px;
+    height: 25px;
+  }
+
+  .cartera_descripcion span{
+    margin-left: 10px;
+  }
+
+  .cartera_saldo {
+    padding-right: 10px;
+    color: #0b91c6
+  }
+
+  .cartera_toggle {
+    /*border-left: 1px solid #e2e2e2;*/
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .cartera_content {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 2px 20px;
+  }
+
+  .cartera_content  p {
+    margin: 0px
+  }
+
+  .cartera.collapse {
+    background: #ecf3fb
+  }
+
+  #togle{
+    opacity:0.5;
+  }
+  #togle:hover{
+    opacity:1;
+    transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+    background:#ecf3fb;
+  }
+
+  .badge-slider {
+    max-height: 100px;
+    -webkit-transition: max-height linear 0.5s;
+    -moz-transition: max-height linear 0.5s;
+    -o-transition: max-height linear 0.5s;
+    transition: max-height linear 0.5s;
+    overflow:hidden;
+  }
+
+  .badge-slider.ng-hide {
+    max-height: 0px;
+  }
+  .detail{
+    width: 200px;
+  }
+  .detailBackground{
+        background-color: aliceblue;
+  }
+  .detailTitulos{
+        margin-top: 10px;
+  }
+  
+
+  
+
+</style>
+
+
+
+
+
+<div class="cartera" layout ng-class="{'collapse': historico.collapse}">  
+  
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+     <span> <md-checkbox ng-model="checkOrden" aria-label="Checkbox 1" ng-click="modalCancelOrden(historico.ordernumber, $event)" ng-show="historico.state != 'Cancelada'">
+      </md-checkbox></span>
+  </div>
+
+
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.ordernumber}}</span>
+  </div>
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.type}}</span>
+  </div>
+
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span></span>
+  </div>
+  
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.nominal}}</span>
+  </div>
+
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.limit}}</span>
+  </div>
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.state}}</span>
+  </div>
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.pauseNoCredit}}</span>
+  </div>
+
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.executed}}</span>
+  </div>
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.executionPrice}}</span>
+  </div>
+  <div 
+    class="cartera_descripcion" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>{{historico.executionRate}}</span>
+  </div>
+
+  <div id="togle" 
+    flex="10"
+    ng-click="historico.onToggle()"
+    class="cartera_toggle"
+    layout layout-align="center center">
+    <i class="{{historico.toggleIcon}}"></i>
+  </div>
+
+</div>
+
+
+
+
+<div class="cartera_content badge-slider detailBackground" layout ng-show="historico.collapse" id="detail"  >
+  
+   <div layout="row" layout-xs="column" layout-align="center" >
+      <div flex="100" class="cartera_toggle">
+
+      <p>Execute</p>
+
+        <div layout="row" layout-xs="column" class="detailTitulos ">
+
+            <div class="detail" flex="20">
+              Libre
+            </div>
+        
+            <div class="detail" flex="20">
+              Tiempo de ejecucion
+            </div>
+
+            <div class="detail" flex="20">
+              Ejecutada
+            </div>
+            
+            <div class="detail" flex="20">
+              Precio
+            </div>
+
+            <div class="detail" flex="20">
+              Tarifa
+            </div>
+        </div> 
+
+        <div layout="row" layout-xs="column" ng-repeat="executions in historico.executions">
+
+            <div class="detail" flex="30">
+              <span ng-repeat="fee in executions.fees">{{ fee.fee }} {{ fee.currency}}</span>
+            </div>
+        
+            <div class="detail" flex="30">
+              {{ executions.time | date:'yyyy-MM-dd HH:mm:ss'}}
+            </div>
+
+            <div class="detail" flex="30">
+              {{ executions.nominal}} 
+            </div>
+            
+            <div class="detail" flex="30">
+              {{ executions.price}}
+            </div>
+
+            <div class="detail" flex="30">
+              {{ executions.rate }}
+            </div>
+        </div>    
+
+
+
+        <!--tr ng-if="showExecutions[order.ordernumber]" ng-repeat="execution in order.executions">
+            <td colspan="3"></td>
+            <td class="textRight"><span ng-repeat="fee in execution.fees">{{ fee.fee | currency:fee.currency }} {{ fee.currency}}{{ $last ? ' ' : ', ' }}</span></td>
+            <td colspan="3" class="textRight">{{ execution.time | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td class="textRight">{{ execution.nominal | currency:marketNominalCurrency }} {{ marketNominalCurrency }}</td>
+            <td class="textRight">{{ execution.price | currency:marketLimitCurrency }} {{ marketLimitCurrency }}</td>
+            <td class="textRight">{{ execution.rate | currency:marketLimitCurrency}} {{ marketLimitCurrency }}/{{marketNominalCurrency}}</td>
+        </tr-->
+
+
+
+      </div>
+    </div>
+
+
+</div>    
+
+
+ 

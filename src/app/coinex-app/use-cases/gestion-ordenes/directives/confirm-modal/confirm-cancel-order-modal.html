@@ -1,0 +1,96 @@
+<div layout style="width: 500px" flex>
+
+	<style>
+		
+		.confirm_modal {
+			padding: 25px;
+		}
+
+		.confirm_modal.compra {
+
+		}
+
+		.confirm_modal.venta {
+			
+		}
+
+		.margin {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		.cantidad_nominal {
+			margin-top: 0px;
+		}
+
+		.cantidad_nominal {
+			
+		}
+
+		.notificacion {
+			text-align: center;
+		}
+
+		.acciones {
+			
+		}
+
+		.cantidad span {
+			border: 1px solid silver;
+			padding: 10px;
+			display: inline-block;
+		}
+
+		.cantidad span:first-child {
+		}
+
+		.cantidad span:last-child {
+			border-left-color: transparent;
+		}
+
+		.cantidad_label {
+			margin-right: 20px;
+			text-align: right;
+		}
+
+		h3 {
+			padding: 0px;
+			margin: 0px;
+			color: #0e95b7;
+			font-weight: bold;
+		}
+
+	</style>
+	
+	<div layout="column" class="confirm_modal compra" flex="100">
+
+		<h3 flex="100">
+			{{text.title}}
+		</h3>
+
+		<div flex="100" layout-align="center center" class="margin cantidad_nominal">
+		
+		</div>
+
+
+
+		<div flex="100" class="margin notificacion">
+			{{text.textContent}} {{orden}}?
+		</div>
+		<br>
+
+		<div layout layout-align="end center" flex="100" class="margin acciones">
+		
+			<md-button class="md-raised"ng-click="close()">
+				{{text.botonCancelar}}
+			</md-button>
+
+			<md-button class="md-raised md-primary" ng-click="execute()">
+				{{text.botonConfirmar}}
+			</md-button>
+
+		</div>
+	
+	</div>
+
+</div>

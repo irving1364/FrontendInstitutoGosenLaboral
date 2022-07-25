@@ -1,0 +1,177 @@
+<style>
+    body {
+        background-color: #FFFFFF;
+    }
+
+
+</style>
+
+
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+      <div layout="column" layout-align="center start">
+          <div class="title" style="font-size: 24px;">Gestion de Tablas de Mantenimiento</div>
+      </div>
+  </div>
+
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Años" ng-click="transitionToRegister()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-table-container>
+                <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="anio"><span>Año</span></th>
+                      <th md-column md-order-by="lectura"><span>Lectura</span></th>
+                      <th md-column ><span>Activo </span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="anios in anio | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{anios.cod}}</td>
+                      <td md-cell>{{anios.anio}}</td>
+                      <td md-cell>
+                        <md-switch ng-model="anios.lectura" ng-true-value="'1'" ng-false-value="'2'" ng-change="onLectura(anios)" class="md-primary" aria-label="lectura">
+                        </md-switch>
+                      </td>
+                      <td md-cell>
+                        <md-switch ng-model="anios.activo" ng-true-value="'1'" ng-false-value="'2'" ng-change="onActivo(anios)" class="md-primary" aria-label="activo">
+                        </md-switch>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{anio.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+      </md-tab>
+      <md-tab label="Grados" ng-click="tabCursos()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <span style="font-size: 14px;" ng-click="modalAgregarCurso()"><i class="fa-thin fa-plus"></i> Agregar Grados</span>
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="curso"><span>Grados</span></th>
+                      <th md-column><span>Acciones </span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="curso in cursos | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{curso.cod}}</td>
+                      <td md-cell>{{curso.curso}}</td>
+                      
+                      <td md-cell>
+                        <span style="font-size: medium;" ng-click="modalEditarCurso(curso, ev)"><i class="fa-solid fa-pen-to-square"></i></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{cursos.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Materias" ng-click="tabMaterias()">
+        <md-content class="md-padding">
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <span style="font-size: 14px;" ng-click="modalAgregarMateria()"><i class="fa-thin fa-plus"></i> Agregar Materia</span>
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="materia"><span>Materias</span></th>
+                      <th md-column md-order-by="anio"><span>Año</span></th>
+                      <th md-column><span>Acciones </span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="materia in materias | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{materia.cod}}</td>
+                      <td md-cell>{{materia.materia}}</td>
+                      <td md-cell>{{materia.anio}}</td>
+                      
+                      <td md-cell>
+                        <span style="font-size: medium;" ng-click="modalEditarMateria(materia, ev)"><i class="fa-solid fa-pen-to-square"></i></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{materias.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+
+
+      <md-tab label="Docentes" ng-click="tabMaestros()">
+        <md-content class="md-padding">
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <span style="font-size: 14px;" ng-click="modalAgregarMaestro()"><i class="fa-thin fa-plus"></i> Agregar Docentes</span>
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="cedula"><span>Cedula</span></th>
+                      <th md-column md-order-by="nombres"><span>Nombres</span></th>
+                      <th md-column><span>Acciones </span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="maestro in maestros | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{maestro.cod}}</td>
+                      <td md-cell>{{maestro.cedula}}</td>
+                      <td md-cell>{{maestro.nombres}}</td>
+                      <td md-cell>
+                        <span style="font-size: medium;" ng-click="modalEditarMaestro(maestro, ev)">
+                          <i class="fa-solid fa-pen-to-square"></i></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{maestros.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+      
+    </md-tabs>
+  </md-content>
+</div>
+
+</div>

@@ -1,0 +1,75 @@
+<style>
+	.dialogdemoBasicUsage #popupContainer {
+		position: relative;
+	}
+	.dialogdemoBasicUsage .footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+		font-size: 0.8em;
+		margin-top: 50px;
+	}
+	.dialogdemoBasicUsage button {
+		width: 200px;
+	}
+	.dialogdemoBasicUsage div#status {
+		color: #c60008;
+	}
+	.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+		margin-bottom: 0;
+	}
+</style>
+
+<form id="curse">
+
+	<md-dialog aria-label="Detalle de la Evaluación" style=" width: 600px;">
+		<md-toolbar>
+			<div class="md-toolbar-tools">
+			<h2>Ausencia y Tardanza</h2>
+			<span flex></span>
+			<md-button class="md-icon-button" ng-click="cancel()">
+				<i style="font-size: x-large;" class="fa-solid fa-delete-left" aria-label="Close dialog"></i>
+			</md-button>
+			</div>
+		</md-toolbar>
+
+		<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+			
+			<div layout="row" layout-wrap>
+				<div flex="100">  
+					
+					<label>Ausencia: 
+						<span ng-if="command.ausencia == '0'" style="font-style: italic; font-weight: 600;">
+							Sin Ausencia
+						</span>
+						<span ng-if="command.ausencia == '1'" style="font-style: italic; font-weight: 600;">
+							Ausencia Injustificada
+						</span>
+						<span ng-if="command.ausencia == '2'" style="font-style: italic; font-weight: 600;">
+							Ausencia Justificada
+						</span>	
+					</label>
+		
+					</br>
+
+					<label>Tardanza: 
+						<span ng-if="command.tardanza == '0'" style="font-style: italic; font-weight: 600;">
+							Sin Tardanza
+						</span>
+						<span ng-if="command.tardanza == '1'" style="font-style: italic; font-weight: 600;">
+							Tardanza Injustificada
+						</span>
+						<span ng-if="command.tardanza == '2'" style="font-style: italic; font-weight: 600;">
+							Tardanza Justificada
+						</span>
+					</label>
+		
+					</br>
+
+				</div>
+			</div>  
+		</md-dialog-content>
+	</form>
+  </md-dialog>

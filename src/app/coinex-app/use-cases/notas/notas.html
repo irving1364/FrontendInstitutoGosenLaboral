@@ -1,0 +1,82 @@
+<style>
+  body {
+      background-color: #FFFFFF;
+  }
+
+
+</style>
+
+
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+<!-- HEADER -->
+<div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+    <div layout="column" layout-align="center start">
+        <div class="title" style="font-size: 24px;">Corte de Notas</div>
+    </div>
+</div>
+
+
+<div ng-cloak>
+<md-content>
+  <md-tabs md-dynamic-height md-border-bottom>
+    <md-tab label="Evaluar Estudiantes" >
+      <md-content class="md-padding">
+        <md-toolbar class="md-table-toolbar md-default" >
+          <div class="md-toolbar-tools">
+            <div flex="50">
+              <md-input-container>
+                <label>Seleccione el Grados</label>
+                <md-select style="width: 380px;" ng-model="command.cod_curso" ng-change="getEstudiantes(command)" required>
+                  <md-option ng-repeat="curso in cursos" ng-value="curso">
+                  {{curso.curso}} - {{curso.seccion}} - {{curso.materia}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+            </div>
+
+            <div flex="50">
+              <span style="font-size: 14px;" ng-click="reportSalon()"><i class="fa-thin fa-plus"></i> Reporte por Salon</span>
+            </div>
+            
+            
+          </div>
+        </md-toolbar>
+        <div layout="row" layout-wrap>
+          <div flex="100">  
+            <md-table-container>
+              <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                  <tr md-row >
+                    <th md-column md-order-by="cod"><span>Cod</span></th>
+                    <th md-column md-order-by="cedula"><span>Cedula</span></th>
+                    <th md-column md-order-by="nombres"><span>Nombres</span></th>
+                    <th md-column >Acciones<span></span></th>
+                  </tr>
+                </thead>
+                <tbody md-body>
+                  <tr md-row ng-repeat="estu in estudiantes | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                    <td md-cell>{{estu.cod}}</td>
+                    <td md-cell>{{estu.cedula}}</td>
+                    <td md-cell>{{estu.nombres}}</td>
+                    <td md-cell>
+                      <span style="font-size: medium;" ng-click="modalAddNota(estu, ev)"><i class="fa-solid fa-pen-to-square"></i></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </md-table-container>
+
+            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{estudiantes.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+        </div>
+      </div>  
+    </md-tab>
+    
+    
+
+  </md-tabs>
+</md-content>
+</div>
+
+</div>
+

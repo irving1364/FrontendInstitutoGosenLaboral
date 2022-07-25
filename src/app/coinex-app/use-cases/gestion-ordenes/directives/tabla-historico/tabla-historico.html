@@ -1,0 +1,61 @@
+
+    <md-table-container style="padding-top: 31px;">
+      <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+        <thead md-head md-order="query.order" md-on-reorder="getDesserts">
+          <tr md-row>
+            <th md-column>Cancelar Orden</th>
+            <th md-column><span>Numero de Orden</span></th>
+            <th md-column>Tipo</th>
+            <th md-column md-numeric md-order-by=""><span>Nominal/Cantidad</span></th>
+            <th md-column>Limite</th>
+            <th md-column>Estado</th>
+            <th md-column>PNC</th>
+            <th md-column>Ejecutada</th>
+            <th md-column>Precio</th>
+            <th md-column>Tarifa</th>
+          </tr>
+        </thead>
+        <tbody md-body>
+          <tr md-row md-select="dessert" md-select-id="name" md-auto-select ng-repeat="order in orders | filter:abiertas" >
+            <td md-cell >
+                <md-checkbox ng-model="checkOrden" aria-label="Checkbox 1" ng-click="modalCancelOrden(order.ordernumber, $event)" ng-show=" order.state != 'Cancelada'">
+                </md-checkbox>
+
+            </td>
+            <td md-cell>{{order.ordernumber}}</td>
+            <td md-cell>{{order.type }}</td>
+            <td md-cell>{{order.nominal | number : 8}}</td>
+
+            <td md-cell>{{order.limit}}</td>
+            <td md-cell>{{order.state}}</td>
+            <td md-cell>{{order.pauseNoCredit}}</td>
+
+            <td md-cell>{{order.executed}}</td>
+            <td md-cell>{{order.executionPrice }}</td>
+            <td md-cell>{{order.nominal}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+<br>
+<md-divider>
+</md-divider>  
+<br>
+<div layout="row" layout-wrap>
+    <div flex="80">
+    </div>
+
+    <div flex="20">
+          <md-input-container>
+              <label>Registros</label>
+              <md-select ng-model="command.cantidadRegistro" style="min-width: 200px;" ng-change="buscar()">
+                <md-option ng-value="5">5</md-option>
+                <md-option ng-value="10"> 10 </md-option>
+                <md-option ng-value="25">25</md-option>
+                <md-option ng-value="50"> 50 </md-option>
+                <md-option ng-value="100"> 100 </md-option>
+              </md-select>
+        </md-input-container>
+    </div>
+</div>          

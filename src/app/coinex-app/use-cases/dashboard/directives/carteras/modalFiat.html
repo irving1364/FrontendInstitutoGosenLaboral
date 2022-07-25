@@ -1,0 +1,163 @@
+<style type="text/css">
+md-dialog {
+    opacity: 0;
+    min-width: 240px;
+    max-width: 50%;
+    max-height: 80%;
+    position: relative;
+    overflow: auto;
+    box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    }
+  .separacionTop5px{
+    margin-top: 5px;
+  }
+
+md-dialog md-dialog-content:not([layout=row]) > *:first-child:not(.md-subheader) {
+    margin-top: -20px;
+}
+
+md-dialog md-dialog-actions {
+    min-height: 64px;
+    padding-top: 28px;
+    padding-bottom: 8px;
+}
+md-dialog md-dialog-content {
+    padding: 0px 0px 0px 0px;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    background-color: rgb(255, 255, 255);
+    color: rgba(4, 136, 230, 0.87);
+}
+
+.inputSombraBorde{
+  border: 1px solid #ccc!important; width: 100%; background-color: rgba(204, 204, 204,0.2);height: 1.9pc;
+}
+
+
+
+</style>
+<md-dialog >
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Depositar {{balance.currency}}</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content" >
+        <p>Por favor, conecte el deposito a la siguiente cuenta bancaria</p>
+          <form name="Form" ng-submit="submit()">
+          <div layout="row" layout-wrap>
+ 
+              <div flex="20">
+                <label>IBAN:  </label>
+              </div>  
+              <div flex="80">
+                <input type="password" name="contrasena"  placeholder="" required="" readonly class="inputSombraBorde" />
+              </div>
+
+               <div flex="20" class="separacionTop5px">
+                <label>BIC:  </label>
+              </div>  
+              <div flex="80" class="separacionTop5px">
+                <input type="password" name="contrasena"  placeholder="" required="" readonly class="inputSombraBorde"/>
+              </div>
+
+              <div flex="20" class="separacionTop5px">
+                <label>Reference:  </label>
+              </div>  
+              <div flex="80" class="separacionTop5px">
+                <md-input-container class="md-block">
+                
+                <input type="text" name="Reference" ng-model="command.Reference" placeholder="Reference" required=""/>
+                <div ng-messages="Form.contrasena.$error" role="alert" multiple="">
+                  <div ng-message="required" class="my-message">Ingrese el codigo de Reference</div>
+                </div>
+              </md-input-container>
+            </div>
+
+              <div flex="20" class="separacionTop5px">
+                <label>Email:  </label>
+              </div>  
+              <div flex="80" class="separacionTop5px">
+                <md-input-container class="md-block">
+                <input type="email" name="email" ng-model="command.correo"  placeholder="Email" required="" ng-maxlength="40"/>
+
+                <div ng-messages="Form.email.$error" role="alert" multiple="">
+                  <div ng-message="required" class="my-message">Ingrese su email</div>
+                  <div ng-message="maxlength">Sobre pasa la longitud</div>
+                  <div ng-message="email" class="my-message">El email no es valido</div>
+                </div>
+        
+      </md-input-container>
+            </div>
+
+
+
+              <div flex="20" class="separacionTop5px">
+                <label>Comprobante:  </label>
+              </div>  
+              <div flex="50" class="separacionTop5px">
+                <input type="file" name="contrasena" ng-model="command.contrasena" placeholder="" required="" readonly/>
+              </div>
+
+              <div flex="100">
+             
+
+
+                    <div class="well">
+                        <form action="" class="dropzone" dropzone="" id="dropzone">
+                            <div class="dz-default dz-message">
+                            </div>
+                        <form>
+                    </div>
+                
+                <div class="pull-right">
+                    <button class="btn btn-success" ng-click="uploadFile()">Upload File</button>
+                    <button class="btn btn-danger" ng-click="reset()">Reset Dropzone</button>
+                </div>
+                <div>
+                    <form>
+                        <label>File to download</label>
+                        <input ng-model="filename" type="text" placeholder="Filename" />
+                        <a class="btn btn-primary" href="" ng-href="{{ partialDownloadLink + filename }}">Download File</a>
+                    </form>
+                </div>
+
+
+
+
+
+              </div>     
+              sss 
+
+          </div>
+          </form>  
+    </md-dialog-content>
+    <br>
+    <md-divider>
+    </md-divider>
+    <md-dialog-actions layout="row">
+      
+      <md-button ng-click="close()">
+       Cancelar
+      </md-button>
+      <md-button  ng-click="envio()" class="buttonModal">
+        Confirmar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

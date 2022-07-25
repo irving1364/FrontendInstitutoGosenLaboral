@@ -1,0 +1,77 @@
+        <md-menu-bar id="user-menu">
+            <md-menu md-position-mode="left bottom">
+                <md-button class="user-button" ng-click="$mdOpenMenu()"
+                           aria-label="User settings"
+                           translate translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
+                    <div layout="row" layout-align="space-between center">
+                        <div class="avatar-wrapper">
+                            <img md-menu-align-target class="avatar" src="assets/images/avatars/profile.jpg">
+                            <md-icon md-font-icon ng-class="vm.userStatus.icon"
+                                     ng-style="{'color': vm.userStatus.color }"
+                                     class="icon status s16">
+                            </md-icon>
+                        </div>
+                        <span class="username" >{{user | limitTo:7}}.</span>
+                        <!--span class="username" hide show-gt-sm>{{user}}</span-->
+                        <md-icon class="icon s16" hide-xs>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </md-icon>
+                    </div>
+                </md-button>
+
+                <md-menu-content width="3">
+                   
+                    <md-menu-item class="md-indent" ui-sref="app.perfil">
+                        <md-icon class="icon"><i class="fa-solid fa-user"></i></md-icon>
+                        <md-button>Perfil</md-button>
+                    </md-menu-item>
+
+                    <md-menu-item class="md-indent" ui-sref="app.password">
+                        <md-icon class="icon"> <i class="fa-solid fa-key"></i> </md-icon>
+                        <md-button>Contraseña</md-button>
+                    </md-menu-item>
+
+                    <md-menu-item ng-if="cod_rol === '4'" class="md-indent" ui-sref="app.passwordAll">
+                        <md-icon class="icon"> <i class="fa-solid fa-key"></i> </md-icon>
+                        <md-button>Modificar Usuarios</md-button>
+                    </md-menu-item>
+
+
+                    <!--md-menu-item class="md-indent">
+                        <md-icon md-font-icon ng-class="vm.userStatus.icon"
+                                 ng-style="{'color': vm.userStatus.color }" class="icon"></md-icon>
+                        
+                        ESTO ESTA COMENTADO POR SI SE QUIERE AGREGAR
+                        UN SEGUNDO VENTANDA EN USUARIO YA ESTA HECHO
+                            
+                        
+                        <md-menu id="user-status-menu">
+                            <md-button ng-click="$mdOpenMenu()" class="status" ng-class="vm.userStatus.class">
+                                Información
+                            </md-button>
+                            <md-menu-content width="2">
+                                <md-menu-item class="status md-indent"
+                                              ng-class="{'selected': status === vm.userStatus}"
+                                              >
+                                    <md-icon md-font-icon="{{status.icon}}" ng-style="{'color': status.color }"
+                                             class="icon"></md-icon>
+                                    <md-button ng-click="vm.setUserStatus(status)">
+                                        Contraseña
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+
+                    </md-menu-item-->
+
+                    <md-menu-divider></md-menu-divider>
+
+                    <md-menu-item class="md-indent">
+                        <md-icon>
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </md-icon>
+                        <md-button ng-click="expireSession()">Cerrar Sesión</md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>

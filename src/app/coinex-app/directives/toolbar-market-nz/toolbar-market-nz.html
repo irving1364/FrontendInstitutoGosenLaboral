@@ -1,0 +1,85 @@
+<style>
+
+	.toolbar_market_nz {
+		height: 64px;
+	}
+
+	.market {
+		font-size: 0.8em;
+	}
+
+	.market_info {
+		margin-left: 20px;
+		margin-right: 10px;
+		margin-top: 3px;
+		color: #334050
+	}
+
+	.market_content {
+	}
+
+	.market_content > span {
+		padding: 5px;
+		margin: -2px;
+		border: 1px solid silver;
+	}
+
+	.market_content > span:first-child {
+		background: #09aedb;
+		border-right: 1px solid transparent;
+		color: white;
+	}
+
+	.market_content > span:last-child {
+		background: #f1f1f1;
+		border-left: 1px solid transparent;
+		color:  #334050
+	}
+
+</style>
+
+<div>
+
+	<md-menu-bar id="user-menu">
+            <md-button class="user-button" ng-click="toggleSidenav('navigation')"
+                           aria-label="User settings" 
+                           translate translate-attr-aria-label="TOOLBAR.USER_SETTINGS" hide-gt-sm>
+                    <div layout="row" layout-align="space-between center">
+                        <md-icon md-font-icon="icon-format-list-bulleted" class="icon"></md-icon>
+                    </div>
+                </md-button>
+                <div class="toolbar-separator"></div>
+        </md-menu-bar>
+
+
+	<div class="toolbar_market_nz" layout ng-show="show" style="
+    margin-top: -60px; margin-left: 60px;">
+
+			<div class="market" layout layout-align="start center" flex="30">
+				
+				<div class="market_info">
+					<i class="fa fa-balance-scale"></i>
+					<span>Mercado</span>
+				</div>
+				
+				<div class="market_content">
+					<span>{{market.nominal}}</span>
+					<span>{{market.limit}}</span>
+				</div>
+				
+			</div>
+			
+	
+	</div>
+	
+	<div style="float: right;
+    margin-top: -60px;">
+		<user>
+    	</user>
+    </div>	
+
+
+	
+
+
+</div>    

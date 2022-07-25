@@ -1,0 +1,195 @@
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+    <div layout="column" layout-align="center start">
+        <div class="title" style="font-size: 24px;">Tablero</div>
+    </div>
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content">
+      
+    <div class="widget-group" layout="row" flex="100" layout-wrap>
+      <!-- WIDGET 5 -->
+      <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+        <!-- Front -->
+        <ms-widget-front class="p-16 white-bg" layout="row" flex>
+            <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+                <div class="md-display-1 pb-8">{{command.estudianCount}}</div>
+                <div class="font-weight-500 secondary-text">ESTUDIANTES</div>
+            </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+    </ms-widget>
+    <!-- / WIDGET 5 -->
+
+    <!-- WIDGET 5 -->
+    <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+      <!-- Front -->
+      <ms-widget-front class="p-16 white-bg" layout="row" flex>
+          <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+              <div class="md-display-1 pb-8">{{command.maestrosCount}}</div>
+              <div class="font-weight-500 secondary-text">DOCENTES</div>
+          </div>
+      </ms-widget-front>
+      <!-- / Front -->
+
+  </ms-widget>
+  <!-- / WIDGET 5 -->
+
+    <!-- WIDGET 6 -->
+    <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+        <!-- Front -->
+        <ms-widget-front class="p-16 white-bg" layout="row" flex>
+            <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+                <div class="md-display-1 pb-8">{{command.cursoCount}}</div>
+                <div class="font-weight-500 secondary-text pb-8">GRADOS</div>
+            </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+    </ms-widget>
+    <!-- / WIDGET 6 -->
+
+    
+  <!-- / WIDGET 6 -->
+    </div>
+
+    <div class="widget-group" layout="row" flex="100" layout-wrap>
+      <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+        <!-- Front -->
+        <ms-widget-front class="h-170 p-16 blue-grey-bg white-fg">
+            <div class="pb-8" layout="row" layout-align="space-between center">
+                <div class="h4 font-weight-500 secondary-text">Uso CPU</div>
+
+                <md-menu>
+                    <md-button aria-label="more" class="md-icon-button"
+                              ng-click="$mdOpenMenu($event)">
+                        <md-icon><i class="fa-solid fa-bars"></i></md-icon>
+                    </md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item>
+                            <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                                Detalles
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="init()" aria-label="Refresh widget">
+                                Refrescar
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+
+            <div layout="column" layout-align="space-between" flex>
+                <div>
+                    <div class="md-display-1 pb-16">{{command.cpu}}%</div>
+
+                    <div class="pb-8">
+                        <md-progress-linear 
+                          md-mode="determinate"
+                          value="{{command.cpu}}">
+                        </md-progress-linear>
+                    </div>
+                </div>
+
+                <div>Ver mas detalles</div>
+            </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+        <!-- Back -->
+        <ms-widget-back class="p-16 blue-grey-bg white-fg">
+            <div class="flip-to-front">
+                <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                    <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+                </md-button>
+            </div>
+
+            <div>
+                Podremos monitorear el uso del CPU del servidor donde corra el backend de la App Web
+            </div>
+        </ms-widget-back>
+        <!-- / Back -->
+
+    </ms-widget>
+    
+
+    <!--Widget2-->
+    <ms-widget flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+      <!-- Front -->
+      <ms-widget-front class="h-170 p-16 deep-purple-bg white-fg">
+          <div class="pb-8" layout="row" layout-align="space-between center">
+              <div class="h4 font-weight-500 secondary-text">Uso Ram</div>
+
+              <md-menu>
+                  <md-button aria-label="more" class="md-icon-button"
+                            ng-click="$mdOpenMenu($event)">
+                      <md-icon><i class="fa-solid fa-bars"></i></md-icon>
+                  </md-button>
+                  <md-menu-content width="2">
+                      <md-menu-item>
+                          <md-button ng-click="flipWidget()" aria-label="Flip widget">
+                              Detalles
+                          </md-button>
+                      </md-menu-item>
+                      <md-menu-item>
+                          <md-button ng-click="init()" aria-label="Refresh widget">
+                              Refrescar
+                          </md-button>
+                      </md-menu-item>
+                  </md-menu-content>
+              </md-menu>
+          </div>
+
+          <div layout="column" layout-align="space-between" flex>
+              <div>
+                  <div class="md-display-1 pb-16">{{command.ram}}%</div>
+
+                  <div class="pb-8">
+                      <md-progress-linear 
+                        md-mode="determinate"
+                        value="{{command.ram}}">
+                      </md-progress-linear>
+                  </div>
+              </div>
+
+              <div>Ver mas detalles</div>
+          </div>
+      </ms-widget-front>
+      <!-- / Front -->
+
+      <!-- Back -->
+      <ms-widget-back class="p-16 blue-grey-bg white-fg">
+          <div class="flip-to-front">
+              <md-button class="md-icon-button" ng-click="flipWidget()" aria-label="Flip widget">
+                  <md-icon md-font-icon="icon-close" class="s16"></md-icon>
+              </md-button>
+          </div>
+
+          <div>
+              Podremos monitorear el uso del CPU del servidor donde corra el backend de la App Web
+          </div>
+      </ms-widget-back>
+      <!-- / Back -->
+
+    </ms-widget>
+  </div>
+
+
+
+
+
+
+  </div>
+  <!-- / CONTENT -->
+
+</div>

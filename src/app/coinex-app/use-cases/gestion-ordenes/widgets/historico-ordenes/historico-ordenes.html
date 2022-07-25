@@ -1,0 +1,191 @@
+<style>
+	.wallet_title {
+		padding: 20px;
+		font-weight: bold;
+		font-size: 17px;
+	}
+	.topTitulo{
+		margin-top: 15px;
+	}
+  .marginLeft20{
+    margin-left: 20px;
+  }
+	.fondoGris{
+		background: #f1f1f1;
+    	margin: 0px -15px;
+	}
+
+  .bottomSheetdemoBasicUsage .md-inline-list-icon-label {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: -10px;
+  height: 24px;
+  vertical-align: middle; }
+
+.bottomSheetdemoBasicUsage .md-grid-item-content {
+  height: 90px;
+  padding-top: 10px; }
+
+.bottomSheetdemoBasicUsage .md-grid-item-content md-icon {
+  height: 48px;
+  width: 48px; }
+
+.bottomSheetdemoBasicUsage .md-grid-text {
+  padding-bottom: 5px; }
+
+.bottomSheetdemoBasicUsage md-list-item, .bottomSheetdemoBasicUsage md-list-item .md-list-item-inner {
+  min-height: 48px; }
+
+.bottomSheetdemoBasicUsage h2 {
+  line-height: 36px;
+  padding-top: 10px; }
+
+.bottomSheetdemoBasicUsage .md-subheader .md-subheader-inner {
+  padding: 0; }
+
+.bottomSheetdemoBasicUsage md-toast .md-toast-content {
+  background-color: #B14141; }
+
+.bottomSheetdemoBasicUsage md-toast > * {
+  font-weight: bolder; }
+.colorazul {
+    color: cadetblue;
+  }  
+
+  .cartera_titulo span{
+    margin-left: 10px;
+  }
+
+
+
+</style>
+  <div layout="row" layout-wrap>
+        <div class="wallet_title">Ordenes</div>
+  </div>
+  <md-divider></md-divider>
+   	<!--filtro-tabla>
+	   </filtro-tabla-->
+  <div class="fondoGris">	
+	  <div layout="row" layout-wrap>
+  		<div flex="80">
+        	<div class="wallet_title">Historial de Ordenes</div>
+  		</div>
+
+  		<div flex="20">
+  			  <br>
+        	<md-button class="md-primary" ng-json-export-excel data="orders" report-fields="{ordernumber: 'Numero de Orden', type: 'tipo', nominal: 'Nominal/Cantidad', limit: 'limite', state: 'Estado', pauseNoCredit: 'PNC', executed: 'Ejecutada', executionPrice: 'Precio', nominal: 'Tarifa'}" filename =" 'orders' " separator="," class="css-class">         
+            Descargar Historial
+          </md-button>
+  		</div>
+	  </div>
+    <md-divider></md-divider>
+    <br>
+  </div>
+  <div layout="row" layout-wrap>
+    <div flex="100">
+        <div class="bottom-sheet-demo inset" layout="row" layout-sm="column" layout-align="center" >
+          <md-button flex="50" class="md-primary md-raised" ng-click="makeOrderFilterBottomSheet($event)">Mostrar Filtros</md-button>
+        </div>
+      </div>
+  </div>   
+
+
+  <!--tabla-historico orders=orders filtrar="filtrar(command)">
+  </tabla-historico-->
+
+  <!--tabla-historico  collapse-all=collapseAll() ng-repeat="orders in orders" orders=orders filtrar="filtrar(command)"></tabla-historico-->
+
+  <div class="cartera" layout >  
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span class="colorazul"></span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span class="colorazul">N. Orden</span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span class="colorazul">Tipo</span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span class="colorazul">Nominal</span>
+  </div>
+
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span class="colorazul">Limite</span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span class="colorazul">Estado</span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>PNC</span>
+  </div>
+
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>Ejecutada</span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>Precio</span>
+  </div>
+  <div 
+    class="cartera_titulo" 
+    flex="10" 
+    layout layout-align="start center">
+      <span>Tarifa</span>
+  </div>
+</div>  
+
+  <historicos historico=order collapse-all=collapseAll() ng-repeat="order in orders" filtrar="filtrar(command)"></historicos>
+
+  <md-divider>
+</md-divider>  
+<br>
+<div layout="row" layout-wrap>
+    <div flex="80">
+    </div>
+
+    <div flex="20">
+          <md-input-container>
+              <label>Registros</label>
+              <md-select ng-model="command.cantidadRegistro" style="min-width: 200px;" ng-change="filtrar(command)">
+                <md-option ng-value="5">5</md-option>
+                <md-option ng-value="10"> 10 </md-option>
+                <md-option ng-value="25">25</md-option>
+                <md-option ng-value="50"> 50 </md-option>
+                <md-option ng-value="100"> 100 </md-option>
+              </md-select>
+        </md-input-container>
+    </div>
+</div>    
+
+
+  <div class="md-padding" ng-cloak>
+    
+    
+</div>

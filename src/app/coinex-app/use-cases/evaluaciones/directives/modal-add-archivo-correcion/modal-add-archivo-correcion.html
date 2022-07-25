@@ -1,0 +1,134 @@
+<style>
+	.dialogdemoBasicUsage #popupContainer {
+		position: relative;
+	}
+	.dialogdemoBasicUsage .footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+		font-size: 0.8em;
+		margin-top: 50px;
+	}
+	.dialogdemoBasicUsage button {
+		width: 200px;
+	}
+	.dialogdemoBasicUsage div#status {
+		color: #c60008;
+	}
+	.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+		margin-bottom: 0;
+	}
+
+	.md-datepicker-input-container{
+		width: 78%;
+	}
+</style>
+
+
+<md-dialog aria-label="Cargar Archivos" style=" width: 700px;">
+	<md-toolbar>
+	<div class="md-toolbar-tools">
+		<h2>Administración de Archivos de Correción</h2>
+		
+		<md-button class="md-icon-button" ng-click="cancel()" style="margin-left: auto;">
+		<i style="font-size: x-large;" class="fa-solid fa-delete-left" aria-label="Close dialog"></i>
+		</md-button>
+	</div>
+	</md-toolbar>
+
+
+
+	  <md-tabs md-dynamic-height md-border-bottom>
+		<md-tab label="Subir" >
+		  
+
+			<form name="formu" novalidate style="width: 90%; margin-left: 5%;">
+
+			<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+				<div class="row">
+		
+				<span>Agregue material de estudio al grado seleccionado</span>
+					
+				<lf-ng-md-file-input name="files" lf-files="files" lf-required lf-maxcount="3" lf-filesize="3MB" lf-totalsize="10MB" lf-mimetype=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf,.pub" multiple drag preview></lf-ng-md-file-input>
+				<div ng-messages="formu.files.$error" style="color:red;">
+					<div ng-message="required">Esto es requerido.</div>
+					<div ng-message="maxcount">Demasiados archivos cargados.</div>
+					<div ng-message="filesize">Tamaño de archivo demasiado grande.</div>
+					<div ng-message="totalsize">Total size too large.</div>
+					<div ng-message="mimetype">Error de tipo de archivo.</div>
+				</div>
+		
+				</div>
+				
+				<!-- end ngIf: ::dialog.$type == 'prompt' -->
+			</md-dialog-content>
+			 
+			
+			  <md-dialog-actions layout="row">	
+				<span flex></span>
+				<md-button ng-click="cancel()" >
+				  Cancelar
+				</md-button>
+				<md-button ng-click="onSubmit(command)" ng-disabled="formu.$invalid" class="md-primary" md-autofocus>
+					Enviar
+				</md-button>
+			  </md-dialog-actions>
+			</form>
+
+		</md-tab>    
+	
+	
+	
+		<md-tab label="Archivos" ng-click="tabArchivos()">
+
+			<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+				
+				<div layout="row" layout-wrap>
+					<div flex="100">  
+						
+						<md-table-container>
+							<table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+							<thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+								<tr md-row >
+								<th md-column md-order-by="cod"><span>Cod</span></th>
+								<th md-column ><span>Archivo</span></th>
+								<th md-column ><span>Acciones</span></th>
+								</tr>
+							</thead>
+							<tbody md-body>
+								<tr md-row ng-repeat="arch in archivos | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+								<td md-cell>{{arch.cod}}</td>
+								<td md-cell>{{arch.nombre}}</td>
+								<td md-cell>
+									<a target="_blank" href="{{urlEvaluaciones}}{{arch.archivo}}"><span style="font-size: medium; padding: 4px;" ><i class="fa-solid fa-file-arrow-down"></i></span></a>
+									<a><span style="font-size: medium; padding: 4px;" ng-click="onSubmitDeleteFile(arch)"><i class="fa-solid fa-trash"></i></span></a>
+								</td>
+								</tr>
+							</tbody>
+							</table>
+						</md-table-container>
+					</div>
+				</div>  
+			</md-dialog-content>
+			  
+		</md-tab>
+	
+	
+	  </md-tabs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+  </md-dialog>

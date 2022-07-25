@@ -1,0 +1,65 @@
+<style>
+	.modal_title {
+		padding: 20px; 
+		border-bottom: 1px solid silver;
+		font-size: 1.2em;
+		color: #075777
+	}
+</style>
+<div layout="column">
+	<div class="modal_title">
+		Retirar {{balance.nick}}
+	</div>
+	<div>
+		<form 
+			name="form" 
+			layout="column"
+			class="retiro_fiat">
+
+			<div layout style="margin-bottom: 40px">
+				Su dinero sera transferido a su cuenta de referencia
+			</div>
+
+			<div layout class="form_row" layout-align="center center" style="margin-bottom: 40px">
+				<label flex="30">
+					{{retiro.form.cantidad.label}}
+				</label>
+				<div class="form-control" flex="100" layout>
+				  	<input 
+				  		type="number"
+				  		flex="80" 
+				  		name="cantidad"
+				  		class="form-control" 
+				  		placeholder="{{retiro.form.cantidad.placeholder}}"
+				  		ng-change="retiro.onChangeCantidad()"
+			        	ng-model="retiro.form.cantidad.model">
+		        	<span 
+		        		flex="20" 
+		        		class="addon">{{retiro.form.cantidad.addons()}}
+		    		</span>
+				  	<div ng-messages="form.cantidad.$error">
+				        <div ng-message="number" class="my-message">
+				        	
+			        	</div>
+			      	</div>
+				</div>
+			</div>
+
+			<div layout="column" layout-align="center end" class="form_footer">
+				<div flex="50" layout>
+					<md-button 
+						class="md-raised" 
+						ng-click="retiro.cancelarRetiro()">
+						Cancelar
+					</md-button>
+					<md-button 
+						class="md-raised md-primary" 
+						ng-click="retiro.executarRetiro()">
+						Retirar fondos
+					</md-button>
+				</div>
+			</div>
+
+		</form>
+	</div>
+</div>

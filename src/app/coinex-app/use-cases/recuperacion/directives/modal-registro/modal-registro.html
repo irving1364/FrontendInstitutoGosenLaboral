@@ -1,0 +1,175 @@
+<div layout style="width: 500px" flex> <style>
+		.confirm_modal {
+			padding: 25px;
+		}
+		.confirm_modal.compra {
+
+		}
+		.confirm_modal.venta {
+			
+		}
+		.margin {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.cantidad_nominal {
+			margin-top: 0px;
+		}
+		.cantidad_nominal {
+			
+		}
+		.notificacion {
+			text-align: center;
+		}
+		.acciones {
+			
+		}
+		.cantidad span {
+			border: 1px solid silver;
+			padding: 10px;
+			display: inline-block;
+		}
+		.cantidad span:first-child {
+		}
+		.cantidad span:last-child {
+			border-left-color: transparent;
+		}
+		.cantidad_label {
+			margin-right: 20px;
+			text-align: right;
+		}
+		h2 {
+			padding: 0px;
+			margin: 0px;
+			color: #0e95b7;
+			font-weight: bold;
+		}
+	</style>
+
+	<div layout="column" class="confirm_modal compra" flex="100">
+		<h2 flex="100">
+			Cree su cuenta Aquí!
+		</h2>
+		<md-divider></md-divider>
+		<br>
+		<br>
+		<div flex="100" layout-align="center center" class="margin cantidad_nominal">
+			<div layout="row" layout-xs="column" 	>
+	
+				<div flex="100">
+		            
+
+						<form name="Form" >
+
+                          <md-input-container class="md-block">
+                            <label>Nombre de usuario </label>
+                            <input  type="text" 
+                                    name="usuario" 
+                                    ng-model="command.usuario" 
+                                    required="" 
+                                    ng-maxlength="50"/>
+
+                            <div ng-messages="Form.usuario.$error" role="alert" multiple="">
+                              <div ng-message="required" class="my-message">Ingrese el titulo</div>
+                              <div ng-message="maxlength">El maximo de caracter permitios son 50</div>
+                            </div>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Correo </label>
+                            <input  type="text" 
+                                    name="correo" 
+                                    ng-model="command.correo" 
+                                    required="" 
+                                    ng-maxlength="50"/>
+
+                            <div ng-messages="Form.correo.$error" role="alert" multiple="">
+                              <div ng-message="required" class="my-message">Ingrese el Link</div>
+                              <div ng-message="maxlength">El maximo de caracter permitios son 50</div>
+                            </div>
+                          </md-input-container>
+
+
+
+                        <md-input-container class="md-block">
+                            <label>Contraseña</label>
+                              <input type="password" 
+                                    name="pass" 
+                                    ng-model="command.pass" 
+                                    required="" 
+                                    ng-maxlength="20"/>
+                            
+
+                            <div ng-messages="Form.pass.$error" role="alert" multiple="">
+                              <div ng-message="required" class="my-message">Ingrese la contraseña</div>
+                              <div ng-message="maxlength">El maximo de caracter permitios son 20</div>
+                            </div>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Vuelva a colocar la Contraseña</label>
+                              <input type="password" 
+                                    name="pass2" 
+                                    ng-model="command.pass2" 
+                                    required="" 
+                                    ng-maxlength="20"/>
+                            
+
+                            <div ng-messages="Form.pass2.$error" role="alert" multiple="">
+                              
+                              <div ng-message="required" class="my-message">Ingrese la contraseña</div>
+                              <div ng-message="maxlength">El maximo de caracter permitios son 20</div>
+                            </div>
+                          </md-input-container>
+
+
+                          
+                          
+	                        
+                          <md-divider>
+	                        </md-divider>
+
+
+
+	                          
+                    </div>
+                    
+                    <div flex="20">
+
+                    </div>
+                </div>    
+
+                	<md-divider>
+                    </md-divider>
+                    
+                    <div layout="row" layout-wrap>
+                    		
+                      <div flex="40">
+                      </div>
+                      <div flex="40">
+                        <md-button ng-disabled="!Form.$valid"  type="button" ng-click="onSubmit(command)" class="md-raised md-primary">&nbsp Registrese &nbsp</md-button>
+                      </div>
+                    </div>
+                  </form> 
+
+
+				</div>
+
+			</div>
+			<br>
+
+		</div>
+	</div>	
+	<br>
+	<md-divider></md-divider>	
+</div>
+
+<div layout layout-align="end center" flex="100" class="margin acciones">
+	<md-button class="md-raised" ng-click="cancel()">
+		{{text.botonCancelar}}
+	</md-button>
+	<!--md-button class="md-raised md-primary" ng-click="execute(command)">
+		Agregar al plato
+	</md-button-->
+</div>
+	

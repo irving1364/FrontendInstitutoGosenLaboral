@@ -1,0 +1,212 @@
+<style type="text/css">
+    .colorWhite {
+        color: white;
+    }
+
+    .tittle {
+        text-transform: uppercase;
+        color: #787878;
+        font-size: 14px;
+        font-weight: bolder;
+        padding-top: 1em;
+        padding-left: 1.5em;
+    }
+
+    li {
+        margin-top: 1em;
+        margin-bottom: 1em;        
+    }
+
+    li > div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+
+
+    li > div > a {
+        padding-top: 3em;
+        width: 100%;
+        padding: 10px;
+        text-decoration: none !important;
+        text-align: middle;
+    }
+
+
+    /*
+
+    li  div  a:hover {
+       color: #fffff !important;        
+    }
+
+    li > div > a:active {
+       color: #4E9BFF !important;        
+    }
+
+    li  div  a .ms-nav-button.active {
+       color: #4E9BFF !important;        
+    }*/
+
+    li > div > a > span {
+        padding-left: 1em;
+        padding-right: 3em;
+        /*vertical-align: super;
+        */
+        vertical-align: text-bottom;
+    }
+
+</style>
+
+
+<!--ms-navigation></ms-navigation-->
+
+<div>
+    <ul>
+
+        <!--li ng-class="{'collapsed': vm.collapsed, 'has-children': vm.hasChildren}" ng-include="'navigation-nested.html'" class="ms-navigation-node ng-scope">
+            <div ms-navigation-item="" layout="row"  class="ms-navigation-item ng-scope layout-row">
+                <a class="ms-navigation-button ng-scope md-custom-theme" ui-sref="app.calendar" ui-sref-active="active md-accent-bg"  href="/calendar">
+                    <i class="icon s16 icon-calendar-today" ></i>
+                    <span class="title ng-scope ng-binding flex" translate="" flex="">Calendar</span>
+                </a>        
+            </div>
+        </li-->
+
+
+        <li style="margin-left: -18%;" ng-if="cod_rol === '4'">
+            <div class="ms-navigation-item ng-scope layout-row" style="padding-top: 0px; padding-bottom: 0px;">
+                <a ui-sref="app.dashboard" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="ms-nav-label colorWhite">Tablero </span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%; margin-top: -10%;" ng-if="cod_rol === '4'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.año" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span class="ms-nav-label colorWhite">Tabla de Mantenimiento</span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%; margin-top: -10%;" ng-if="cod_rol === '4'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.asignacion" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span class="ms-nav-label colorWhite">Asignación</span>
+                </a>
+            </div>
+        </li>
+        
+
+        <!--li style="margin-left: -18%;" ng-if="cod_rol === '2'">
+            <div class="ms-navigation-item ng-scope layout-row" style="padding-top: 0px; padding-bottom: 0px;">
+                <a ui-sref="app.notas" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-award"></i>
+                    <span class="ms-nav-label colorWhite">Notas </span>
+                </a>
+            </div>
+        </li-->
+
+        <li style="margin-left: -18%;" ng-if="cod_rol === '2'">
+            <div class="ms-navigation-item ng-scope layout-row" style="padding-top: 0px; padding-bottom: 0px;">
+                <a ui-sref="app.evaluaciones" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-clipboard"></i>
+                    <span class="ms-nav-label colorWhite">Rendimiento Académico </span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%;" ng-if="nombre === 'Erasto Bustamantes'">
+            <div class="ms-navigation-item ng-scope layout-row" style="padding-top: 0px; padding-bottom: 0px;">
+                <a ui-sref="app.clases" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-landmark"></i>
+                    <span class="ms-nav-label colorWhite">Clases </span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%;" ng-if="cod_rol === '2'">
+            <div class="ms-navigation-item ng-scope layout-row" style="padding-top: 0px; padding-bottom: 0px;">
+                <a ui-sref="app.notas-consejero" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-people-pulling"></i>
+                    <span class="ms-nav-label colorWhite">Consejero</span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%; margin-top: -10%;" ng-if="cod_rol === '2'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.reporte-maestro" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span class="ms-nav-label colorWhite">Reportes</span>
+                </a>
+            </div>
+        </li>
+
+        <!--li style="margin-left: -18%;" ng-if="cod_rol === '3'">
+            <div class="ms-navigation-item ng-scope layout-row" style="padding-top: 0px; padding-bottom: 0px;">
+                <a ui-sref="app.misNotas" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-award"></i>
+                    <span class="ms-nav-label colorWhite">Mis Notas</span>
+                </a>
+            </div>
+        </li-->
+
+
+        <li style="margin-left: -18%;" ng-if="cod_rol === '3'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.evaluacionesEstu" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span class="ms-nav-label colorWhite">Mis Evaluaciones</span>
+                </a>
+            </div>
+        </li>
+
+        <!--Seccion del rol de administracion -->
+        <li style="margin-left: -18%;" ng-if="cod_rol === '1'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.tablero" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                   <i class="fa-solid fa-table-columns"></i>
+                    <span class="ms-nav-label colorWhite">Tablero</span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%; margin-top: -10%;" ng-if="cod_rol === '1'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.asignacion" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span class="ms-nav-label colorWhite">Asignación</span>
+                </a>
+            </div>
+        </li>
+
+        <li style="margin-left: -18%; margin-top: -10%;" ng-if="cod_rol === '4' || cod_rol === '1'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.visualizacion" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span class="ms-nav-label colorWhite">Reportes</span>
+                </a>
+            </div>
+        </li>
+
+
+
+
+        
+
+        <li style="margin-left: -18%; margin-top: -10%;"  ng-if="cod_rol === '3'">
+            <div class="ms-navigation-item ng-scope layout-row">
+                <a ui-sref="app.calendario" class="ms-navigation-button" ui-sref-active="active md-accent-bg">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span class="ms-nav-label colorWhite">Calendario</span>
+                </a>
+            </div>
+        </li>
+       
+
+    </ul>
+</div>

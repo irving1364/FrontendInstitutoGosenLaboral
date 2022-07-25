@@ -1,0 +1,77 @@
+<div class="frame-content flex layout-padding">
+      <div layout="row">
+          <span class="tittle-content">Registrar Productos</span>
+      </div>
+      <md-divider></md-divider>
+
+      <div layout="row" layout-wrap>
+          <div flex="20">
+              <h1>                
+                <img src="app/main/sample/img/lista2.png"  class="md-card-image" alt="image caption"/>
+              </h1>
+          </div>
+          <div flex="80">
+              <md-list>
+
+                  <md-list-item class="md-3-line" style="padding-bottom: 90px;">
+                    <div class="md-list-item-text">
+                      <h2>Agregar nueva cuenta Bancaria</h2>
+
+                    </div>
+                    
+                    <md-button 
+                    style="margin-top: 25px;"
+                    class="md-accent md-raised"  
+                     ng-model="command.confirmeCorreo"
+                     ng-click="openAgregarBancoModal(event)">
+                    Agregar
+                  </md-button>
+
+                    <md-divider></md-divider>
+                  </md-list-item>
+              
+                  <md-list-item class="md-2-line" >
+                    <div class="md-list-item-text">
+                      <h2>Lista de bancos agregados</h2>
+                      </div>
+                    
+                      <md-button 
+                      style="margin-top: 25px;"
+                      class="md-accent md-raised"  
+                      ng-model="command.anadeTelefono"  
+                      ng-click="openListarBancoModal(event)">
+                      Ver
+                    </md-button>
+                    <md-divider></md-divider>
+                  </md-list-item>
+
+            </md-list>
+          </div>
+      </div>
+</div>
+
+
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

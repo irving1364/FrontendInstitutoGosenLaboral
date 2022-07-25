@@ -1,0 +1,56 @@
+
+
+<div layout="row" layout-wrap>
+	<div flex="30" class="topTitulo marginLeft20">
+	   	 Estado
+	   	 <br>
+	   	<md-checkbox ng-model="command.abiertas" ng-true-value="1" ng-false-value="0" ng-change="buscar()" aria-label="Abiertas" class="topTitulo">
+		  Abiertas 
+		</md-checkbox>
+		 <br>
+		<md-checkbox ng-model="command.ejecutadas" ng-true-value="2"  ng-false-value="0" ng-change="buscar()" aria-label="Ejecutadas">
+		  Ejecutadas
+		</md-checkbox>
+		 <br>
+		<md-checkbox md-no-ink ng-model="command.canceladas" ng-true-value="3"  ng-false-value="0" ng-change="buscar()" aria-label="Canceladas">
+		  Canceladas
+		</md-checkbox>
+		 <br>
+		<md-checkbox md-no-ink ng-model="command.pausadas" ng-true-value="4"  ng-false-value="0" ng-change="buscar()" aria-label="Pausadas">
+		  Pausadas
+		</md-checkbox>
+		 <br>  
+	   </div>
+	   <div flex="30" class="topTitulo">
+	   	 Tipo
+	   	 <br>	
+	   	 <md-checkbox ng-model="command.compra" aria-label="Compra" ng-true-value="1"  ng-false-value="0" ng-change="buscar()" class="topTitulo">
+		  Compra
+		</md-checkbox>
+		 <br>
+		<md-checkbox md-no-ink ng-model="command.venta" ng-true-value="1"  ng-false-value="0" ng-change="buscar()" aria-label="Venta">
+		  Venta
+		</md-checkbox>
+		 <br>
+	   </div>x
+	   <div flex="30" class="topTitulo">
+	   	 Numero de Orden
+	   	 <br>
+
+	   	<md-input-container>
+		  <label>Desde</label>
+		  <input type="number" ng-model="command.desde" >
+		</md-input-container>
+
+	   	 <br>
+
+	   	<md-input-container>
+		  <label>Hasta</label>
+		  <input type="number" ng-model="command.hasta" >
+		</md-input-container>
+
+		<br>
+		<md-button class="md-accent md-raised"  ng-click="buscar()">Aplicar Filtros</md-button>
+
+	   </div>
+</div>	   

@@ -1,0 +1,88 @@
+<style>
+  body {
+      background-color: #FFFFFF;
+  }
+
+
+</style>
+
+
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+<!-- HEADER -->
+<div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+    <div layout="column" layout-align="center start">
+        <div class="title" style="font-size: 24px;">Mis Notas</div>
+    </div>
+</div>
+
+
+<div ng-cloak>
+<md-content>
+  <md-tabs md-dynamic-height md-border-bottom>
+    <md-tab label="Notas" >
+      <md-content class="md-padding">
+        
+        <div layout="row" layout-wrap>
+          <div flex="50">
+            <h2>Mis notas</h2>
+          </div>
+          <div flex="50" style="margin-top: 20px; margin-bottom: 10px;">
+            <span style="font-size: 14px;" ng-click="pdf(notas)"><i class="fa-thin fa-plus"></i> Ver Boletin</span>
+          </div>
+          <div flex="50">
+            <p>Si aun no te parece alguna materia, es poque aun no te han cargado nota en ella.</p>
+          </div>
+        </div>
+
+        <div layout="row" layout-wrap>
+          <div flex="100">  
+            <md-table-container>
+              <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                  <tr md-row >
+                    <th md-column md-order-by="materia"><span>Asignatura</span></th>
+                    <th md-column md-order-by="nota1"><span>C. IT</span></th>
+                    <th md-column md-order-by="nota2"><span>C. IIT</span></th>
+                    <th md-column md-order-by="nota3"><span>C. IIIT</span></th>
+                    <th md-column md-order-by="ausencia1"><span>A. IT</span></th>
+                    <th md-column md-order-by="ausencia2"><span>A. IIT</span></th>
+                    <th md-column md-order-by="ausencia3"><span>A. IIIT</span></th>
+                    <th md-column md-order-by="tardanza1"><span>T. IT</span></th>
+                    <th md-column md-order-by="tardanza2"><span>T. IIT</span></th>
+                    <th md-column md-order-by="tardanza3"><span>T. IIIT</span></th>
+                  </tr>
+                </thead>
+                <tbody md-body>
+                  <tr md-row ng-repeat="nota in notas | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                    <td md-cell>{{nota.materia}}</td>
+                    <td md-cell>{{nota.nota1}}</td>
+                    <td md-cell>{{nota.nota2}}</td>
+                    <td md-cell>{{nota.nota3}}</td>
+                    <td md-cell>{{nota.ausencia1}}</td>
+                    <td md-cell>{{nota.ausencia2}}</td>
+                    <td md-cell>{{nota.ausencia3}}</td>
+                    <td md-cell>{{nota.tardanza1}}</td>
+                    <td md-cell>{{nota.tardanza2}}</td>
+                    <td md-cell>{{nota.tardanza3}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </md-table-container>
+
+            <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+        </div>
+      </div> 
+    </md-tab>
+
+
+    
+    
+    
+
+  </md-tabs>
+</md-content>
+</div>
+
+</div>
+

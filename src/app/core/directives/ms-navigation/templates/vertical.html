@@ -1,0 +1,161 @@
+<ul>
+    <li ng-repeat="node in vm.navigation" ms-navigation-node="node"
+        ng-class="{'collapsed': vm.collapsed, 'has-children': vm.hasChildren}"
+        ng-include="'navigation-nested.html'"></li>
+</ul>
+
+<script type="text/ng-template" id="navigation-nested.html">
+
+    <div ms-navigation-item layout="row">
+
+        <div class="ms-navigation-button" ng-if="!node.uisref && node.title">
+            <span class="title" flex>Admin Web</span>
+        </div>
+
+       
+        <!--a class="ms-navigation-button" ui-sref="app.estudiantes" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title">
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Estudiantes</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.maestros" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title">
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Maestros</span>
+        </a-->
+
+        <a class="ms-navigation-button" ui-sref="app.mensajeria" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title">
+            <i class="icon s16 icon-email" ng-if="node.icon"></i>
+            <span class="title" flex>Mensajeria</span>
+            <span class="badge  ng-binding ng-scope" ng-style="{'background': node.badge.color}"  style="background: rgb(244, 67, 54);">{{cantMail}}</span>
+        </a>
+
+        <!--a class="ms-navigation-button" ui-sref="app.user" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Usuarios</span>
+        </a-->
+
+        <a class="ms-navigation-button" ui-sref="app.conferencias" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Conferencias</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.evaluaciones" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Evaluaciones</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.conferenciasEstu" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && idRol ==4" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Conferencias</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.agendaMaestros" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Agenda</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.agenda" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && idRol ==4" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Agenda</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.formulario" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Formulario</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.formularioEstu" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && idRol ==4" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Formulario</span>
+        </a>
+        
+
+        <a class="ms-navigation-button" ui-sref="app.registros" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Registrar</span>
+        </a>
+
+        <a class="ms-navigation-button" ui-sref="app.horario" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Horario</span>
+        </a>
+
+       
+        <a class="ms-navigation-button" ui-sref="app.horarioEstu" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && idRol ==4" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Horario</span>
+        </a>
+
+
+        <a class="ms-navigation-button" ui-sref="app.mantenimiento" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title && nivelAcceso ==1" >
+            <i class="icon-view-dashboard" ng-if="node.icon"></i>
+            <span class="title" flex>Mantenimiento</span>
+        </a>
+
+
+        
+
+        
+        
+
+    </div>
+
+    <ul ng-if="vm.hasChildren && !vm.isHidden()">
+        <li ng-repeat="node in node.children" ms-navigation-node="node"
+            ng-class="{'collapsed': vm.collapsed, 'has-children': vm.hasChildren}"
+            ng-include="'navigation-nested.html'"></li>
+    </ul>
+
+</script>
+<!--
+<ul>
+    <li ng-repeat="node in vm.navigation" ms-navigation-node="node"
+        ng-class="{'collapsed': vm.collapsed, 'has-children': vm.hasChildren}"
+        ng-include="'navigation-nested.html'"></li>
+</ul>
+
+<script type="text/ng-template" id="navigation-nested.html">
+
+    <div ms-navigation-item layout="row" ng-if="!vm.isHidden()">
+
+        <div class="ms-navigation-button" ng-if="!node.uisref && node.title">
+            <i class="icon s16 {{node.icon}}" ng-if="node.icon"></i>
+            <span class="title" translate="{{node.translate}}" flex>{{node.title}}</span>
+            <span class="badge white-fg" ng-style="{'background': node.badge.color}" ng-if="node.badge">{{node.badge.content}}</span>
+            <i class="icon-chevron-right s16 arrow" ng-if="vm.collapsable && vm.hasChildren"></i>
+        </div>
+
+        <a class="ms-navigation-button" ui-sref="{{node.uisref}}" ui-sref-active="active md-accent-bg"
+           ng-if="node.uisref && node.title">
+            <i class="icon s16 {{node.icon}}" ng-if="node.icon"></i>
+            <span class="title" translate="{{node.translate}}" flex>{{node.title}}</span>
+            <span class="badge white-fg" ng-style="{'background': node.badge.color}" ng-if="node.badge">{{node.badge.content}}</span>
+            <i class="icon-chevron-right s16 arrow" ng-if="vm.collapsable && vm.hasChildren"></i>
+        </a>
+
+    </div>
+
+    <ul ng-if="vm.hasChildren && !vm.isHidden()">
+        <li ng-repeat="node in node.children" ms-navigation-node="node"
+            ng-class="{'collapsed': vm.collapsed, 'has-children': vm.hasChildren}"
+            ng-include="'navigation-nested.html'"></li>
+    </ul>
+
+</script>
+-->
+<!-- / Nested navigation template -->

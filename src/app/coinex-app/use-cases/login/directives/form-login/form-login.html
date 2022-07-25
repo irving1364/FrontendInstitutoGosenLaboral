@@ -1,0 +1,54 @@
+<div layout="row" layout-wrap>
+    <div flex="100" style="text-align: center;">
+        <!--img style="width: 20%;" src="assets/images/logos/LogocoinexVerde.png"-->
+        <center><h4>Logo</h4></center>
+    </div>
+  </div>
+
+<div  layout="row" layout-align="start center">
+</div>
+
+
+<form name="Form" ng-submit="submit()">
+ 	<h2 class="md-display">Login</h2>
+  <br>
+
+    <md-input-container class="md-block">
+      <label>Usuario</label>
+      <input  type="text" 
+              name="user" 
+              ng-model="command.user" 
+              required="" 
+              ng-minlength="4"/>
+
+      <div ng-messages="Form.user.$error" role="alert" multiple="">
+        <div ng-message="required" class="my-message">Ingrese su Usuario</div>
+        <div ng-message="minlength">El usuario debe tener como mínimo 4 caracteres</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>Contraseña</label>
+      <input  type="password" 
+              name="contrasena" 
+              ng-model="command.pass" 
+              required="" 
+              ng-minlength="4"/>
+
+      <div ng-messages="Form.contrasena.$error" role="alert" multiple="">
+        <div ng-message="required" class="my-message">Ingrese su Contraseña</div>
+        <div ng-message="minlength">Su Contraseña debe tener como mínimo 4 caracteres</div>
+      </div>
+    </md-input-container>
+
+	<div layout="row" layout-wrap>
+	  <div flex="30">
+	    <md-button ng-disabled="!Form.$valid" type="submit" class="md-raised md-primary">&nbsp Iniciar sesión &nbsp</md-button>
+	  </div>
+
+    <div flex="30">
+      <md-button ng-click="modalRegistro(ev)" type="button" class="md-raised md-primary">&nbsp Registrarse &nbsp</md-button>
+    </div>
+
+	</div>
+</form>

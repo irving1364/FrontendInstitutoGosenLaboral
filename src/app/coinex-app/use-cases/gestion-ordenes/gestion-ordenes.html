@@ -1,0 +1,23 @@
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Comprar" ng-click="transitionToComprar()">
+        <md-content class="md-padding">
+          <div ui-view="comprar"></div>
+        </md-content>
+      </md-tab>
+      <md-tab label="Vender" ng-click="transitionToVender()">
+        <md-content class="md-padding">
+          <div ui-view="vender"></div>
+        </md-content>
+      </md-tab>
+      <md-tab 
+          label="Historico de ordenes" 
+          ng-click="transitionToHistoricoOrdenes()">
+        <md-content class="md-padding">
+          <div ui-view="historicoOrdenes"></div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

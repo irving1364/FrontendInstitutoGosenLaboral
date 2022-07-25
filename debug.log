@@ -1,0 +1,409 @@
+[1117/122110.218:ERROR:ipc_thread_impl.cc(103)] Unable to create IPC as client!Pipe name used: oauc_pipe0e792d38c9d643edb0ed831e0f784dc3
+[5088:3644:1117/122115.938:570729:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122115.938:570729:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.033:570823:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.033:570823:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.166:570948:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.166:570948:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.267:571057:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.267:571057:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.398:571182:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.398:571182:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.514:571306:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.514:571306:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.634:571416:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.634:571416:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.762:571556:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.762:571556:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.835:571618:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.861:571650:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122116.927:571712:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122116.927:571712:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122117.039:571821:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122117.039:571821:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122117.505:572289:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122117.505:572289:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.378:575160:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.378:575160:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.462:575253:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.462:575253:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.520:575316:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.521:575316:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.614:575409:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.614:575409:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.706:575487:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.706:575487:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.787:575581:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.787:575581:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.881:575674:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.881:575674:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122120.959:575752:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122120.959:575752:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122121.017:575799:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122121.018:575799:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122121.102:575893:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122121.102:575893:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122121.221:576002:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122121.221:576002:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122121.316:576111:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122121.316:576111:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.269:581056:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.269:581056:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.363:581150:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.363:581150:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.455:581244:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.455:581244:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.519:581306:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.520:581306:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.598:581384:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.598:581384:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.689:581478:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.689:581478:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.784:581571:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.784:581571:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.866:581649:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.866:581649:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122126.920:581712:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122126.920:581712:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122127.004:581790:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122127.004:581790:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122127.090:581883:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122127.090:581883:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122127.174:581961:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122127.174:581961:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122135.729:590526:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122135.729:590526:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122135.815:590604:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122135.815:590604:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122135.912:590697:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122135.912:590697:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122135.962:590744:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122135.962:590744:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.057:590838:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.057:590838:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.145:590931:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.145:590931:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.232:591025:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.232:591025:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.318:591103:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.318:591103:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.395:591181:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.395:591181:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.459:591243:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.459:591243:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.546:591337:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.546:591337:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[5088:3644:1117/122136.637:591430:ERROR:networkimpl.cc(320)] [AU] Send Request status: 6
+[5088:3644:1117/122136.637:591430:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 0
+[1117/124246.983:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1118/081610.394:ERROR:ipc_thread_impl.cc(103)] Unable to create IPC as client!Pipe name used: oauc_pipe0e792d38c9d643edb0ed831e0f784dc3
+[1120/073210.990:ERROR:ipc_thread_impl.cc(103)] Unable to create IPC as client!Pipe name used: oauc_pipe0e792d38c9d643edb0ed831e0f784dc3
+[1120/073211.824:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1203/142558.603:ERROR:ipc_thread_impl.cc(103)] Unable to create IPC as client!Pipe name used: oauc_pipe0e792d38c9d643edb0ed831e0f784dc3
+[5276:1452:1203/142731.469:694251:ERROR:networkimpl.cc(320)] [AU] Send Request status: 56
+[5276:1452:1203/142731.583:694376:ERROR:networkimpl.cc(521)] [AU] Request sending failed. HTTP return code: 200
+[5276:1452:1203/142731.583:694376:ERROR:update_preparer_impl.cc(317)] [AU] Couldn't connect to: https://dl.opera.com/download/get/?id=44518&autoupdate=1&stream=Stable
+[5276:1452:1203/142731.583:694376:ERROR:autoupdatechecker.cc(338)] [AU] The update download error occured 1 time(s) for the current url. Next retry will be done in 6023 ms.
+[1215/084751.122:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1215/113605.031:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1215/115952.675:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1216/125002.934:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1216/130702.889:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[1216/150126.427:ERROR:autoupdatechecker.cc(143)] Unable to prepare update checker runtime.
+[0331/111608.228:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0331/134931.589:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0331/135912.562:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0331/140148.448:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0331/145928.273:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0401/083728.109:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0401/091937.795:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0402/102323.141:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/081133.579:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/082133.580:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/082133.583:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/082633.601:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/084133.602:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/085633.625:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/091133.625:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/092633.628:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/094133.628:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/095633.628:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/101133.630:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/102633.636:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/104133.640:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/105052.528:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/105617.846:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/105633.640:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/111133.641:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/112633.641:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/114133.641:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/115633.648:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/121133.650:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/122633.657:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/124133.658:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/125633.664:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/131133.665:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/132633.665:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/134133.667:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/135633.667:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/141133.667:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/142633.668:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/144133.669:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/145633.669:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/151133.669:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/152633.670:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/153345.423:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/154133.671:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/155633.679:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/161133.680:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/162633.691:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/164133.693:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/165633.703:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/171133.704:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0403/171852.498:ERROR:process_info.cc(329)] VirtualQueryEx: Acceso denegado. (0x5)
+[0403/171852.539:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0403/171852.466:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.453:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.448:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.570:ERROR:exception_snapshot_win.cc(98)] thread ID 11176 not found in process
+[0403/171852.514:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.571:ERROR:exception_snapshot_win.cc(98)] thread ID 11296 not found in process
+[0403/171852.571:ERROR:exception_snapshot_win.cc(98)] thread ID 10072 not found in process
+[0403/171852.571:ERROR:exception_snapshot_win.cc(98)] thread ID 9684 not found in process
+[0403/171852.474:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.442:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.463:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.539:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0403/171852.587:ERROR:exception_snapshot_win.cc(98)] thread ID 7712 not found in process
+[0403/171852.587:ERROR:exception_snapshot_win.cc(98)] thread ID 11300 not found in process
+[0403/171852.587:ERROR:exception_snapshot_win.cc(98)] thread ID 8776 not found in process
+[0403/171852.799:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.799:ERROR:exception_snapshot_win.cc(98)] thread ID 5288 not found in process
+[0403/171852.806:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.806:ERROR:exception_snapshot_win.cc(98)] thread ID 11148 not found in process
+[0403/171852.817:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.817:ERROR:exception_snapshot_win.cc(98)] thread ID 360 not found in process
+[0403/171852.882:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171852.882:ERROR:exception_snapshot_win.cc(98)] thread ID 4768 not found in process
+[0403/171853.070:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171853.070:ERROR:exception_snapshot_win.cc(98)] thread ID 10016 not found in process
+[0403/171853.215:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[0403/171853.215:ERROR:exception_snapshot_win.cc(98)] thread ID 4028 not found in process
+[0404/084527.653:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/085706.601:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/101818.547:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/194138.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/195138.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/195138.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/195638.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/201138.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/202638.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/204138.270:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/205638.274:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/211138.275:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0404/212638.275:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/084051.980:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/085551.981:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/091051.981:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/092551.983:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/094052.008:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/095552.008:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/101052.009:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/102552.009:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/104052.010:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/105552.012:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/111052.012:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/112552.014:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/114052.015:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/115552.016:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/121052.017:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/122552.017:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/124052.018:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/125552.018:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/131052.054:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/132552.056:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/134052.100:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/135552.101:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/145212.635:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/150712.635:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/152212.635:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/153712.636:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/155212.636:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/160712.637:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/162212.638:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/163712.639:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/165212.640:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/170712.641:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/172212.641:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/173712.643:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/175212.643:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/180712.644:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/182212.644:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/183712.646:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/185212.646:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/190712.647:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/192212.655:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/193712.655:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/195212.655:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/200712.656:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/202212.656:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/203712.657:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/205212.658:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/210712.658:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/212212.658:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/213712.659:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/215212.659:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/220712.661:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0405/222212.662:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/062210.041:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/063710.041:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/065210.044:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/070710.044:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/072210.045:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/073710.046:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/075210.047:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/080710.101:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/082210.102:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/083710.103:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/085210.106:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/090710.106:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/092210.107:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/093710.107:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/095210.109:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/100710.110:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/112129.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/123421.937:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/142116.479:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0406/192319.339:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0408/080112.331:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/075649.262:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/080649.264:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/080649.265:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/081149.262:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/082649.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/084149.263:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/085939.499:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/122603.858:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/180150.470:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0411/214537.522:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0412/182726.832:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0413/091245.109:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0413/185809.916:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0414/080637.193:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0414/152920.840:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0414/162925.792:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0414/171453.555:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0414/194336.941:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0416/072436.420:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0420/094105.135:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0420/121536.185:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0420/204022.109:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/094617.547:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/095617.548:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/095617.548:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/100117.573:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/101617.574:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/103117.575:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/104617.576:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/110117.577:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/122253.454:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/123253.470:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/123253.471:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/123728.679:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/123753.486:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/125253.488:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/130753.488:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/132253.489:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/133753.490:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/135253.495:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/140753.496:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/142253.497:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/143753.498:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/145253.498:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/150753.498:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/154959.618:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/155959.619:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/155959.620:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/160459.744:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/161959.745:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/163459.776:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/164959.776:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/170459.776:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/171959.777:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/173459.777:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/174959.777:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0421/180459.778:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/063429.535:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/064613.745:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/082450.695:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/091810.762:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/104450.989:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/104930.918:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/105205.091:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/111913.542:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/122225.961:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0424/135607.904:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0425/073440.611:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0425/081645.373:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0425/093949.256:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/180843.175:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/181843.177:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/181843.177:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/182343.215:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/183843.218:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/185343.219:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/190843.222:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/192343.222:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/193843.223:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/195343.223:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/200843.224:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/202343.224:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/203843.224:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/205343.225:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/210843.228:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/212343.246:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0428/213843.248:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/061536.638:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/063036.640:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/064536.648:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/070036.649:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/071536.658:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/073036.663:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/074536.665:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/080036.666:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/081536.666:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/083036.691:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/084536.692:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/090036.705:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/091536.705:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/093036.705:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/094536.706:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/100036.707:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/101536.737:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/103036.738:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/104536.739:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/110036.740:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/110321.611:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/111536.740:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/113036.741:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/114536.742:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/120036.743:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/121536.743:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/123036.744:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/124536.745:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/130036.745:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/131536.746:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0429/143709.693:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0430/101123.452:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0430/140102.003:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0430/154849.953:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0430/174938.674:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0430/212453.938:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0501/092752.497:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0502/201119.222:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0502/201723.363:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0502/212502.368:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0503/094607.180:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0503/114640.325:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0504/091454.157:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0504/143150.080:ERROR:crash_report_database_win.cc(428)] unexpected header

@@ -1,0 +1,68 @@
+<style>
+    body {
+        background-color: #FFFFFF;
+    }
+
+
+</style>
+
+
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+      <div layout="column" layout-align="center start">
+          <div class="title" style="font-size: 24px;">Asignación de Materias a Grado <i class="fa-solid fa-book-bookmark"></i></div>
+      </div>
+  </div>
+
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Asignar Materias" ng-click="transitionToRegister()">
+        <md-content class="md-padding">
+          <md-toolbar class="md-table-toolbar md-default" >
+            <div class="md-toolbar-tools">
+              <span style="font-size: 14px;" ng-click="modalAsignarMateria()"><i class="fa-thin fa-plus"></i> Asignar Materia</span>
+            </div>
+          </md-toolbar>
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-table-container>
+                <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="curso"><span>Grados</span></th>
+                      <th md-column md-order-by="seccion"><span>Seccion</span></th>
+                      <th md-column md-order-by="ano"><span>Año</span></th>
+                      <th md-column ><span>Accion</span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="curso in cursos | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{curso.cod}}</td>
+                      <td md-cell>{{curso.curso}}</td>
+                      <td md-cell>{{curso.seccion}}</td>
+                      <td md-cell>{{curso.ano}}</td>
+                      <td md-cell ng-click="modalVerMateriasCurso(curso, ev)">
+                        <i  class="fa-solid fa-eye"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{cursos.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+      </md-tab>
+      
+      
+
+    </md-tabs>
+  </md-content>
+</div>
+
+</div>

@@ -1,0 +1,61 @@
+<div id="login" class="flex-scrollable" layout="column" ms-scroll>
+  <div id="login-form-wrapper" layout="column" layout-align="center center">
+      <div id="login-form" class="md-whiteframe-8dp">
+        <img src="assets/varias/OK_LOGO.png" alt="">
+      </img>
+          <!--div class="logo md-accent-bg">
+              <span>G</span>
+          </div-->
+
+          <div class="title" >¡Cambia tu Contraseña!</div>
+
+          <form name="loginForm" novalidate>
+            
+              <md-input-container class="md-block" md-no-float>
+                <input type="{{typePassword}}" name="password" ng-model="command.password1" placeholder="Contraseña Nueva"
+                        required ng-minlength="4">
+                  <md-icon ng-if="typePassword === 'password'" ng-click="togglePassword('text')" style="display:inline-block;">
+                     <i class="fa-solid fa-eye"></i>
+                  </md-icon>
+                  <md-icon ng-if="typePassword === 'text'" ng-click="togglePassword('password')" style="display:inline-block;">
+                    <i class="fa-solid fa-eye-slash"></i>
+                 </md-icon>
+                  <div ng-messages="loginForm.password.$error" role="alert">
+                    <div ng-message="required"><span>Contraseña es requerida</span></div>
+                    <div ng-message="minlength">La contraseña debe tener como mínimo 4 caracteres</div>
+                </div>
+            </md-input-container>
+
+
+            <md-input-container class="md-block" md-no-float>
+                <input type="{{typePassword}}" name="password" ng-model="command.password2" placeholder="Confirmar Contraseña"
+                        required ng-minlength="4">
+                  <md-icon ng-if="typePassword === 'password'" ng-click="togglePassword('text')" style="display:inline-block;">
+                     <i class="fa-solid fa-eye"></i>
+                  </md-icon>
+                  <md-icon ng-if="typePassword === 'text'" ng-click="togglePassword('password')" style="display:inline-block;">
+                    <i class="fa-solid fa-eye-slash"></i>
+                 </md-icon>
+                  <div ng-messages="loginForm.password2.$error" role="alert">
+                    <div ng-message="required"><span>Contraseña es requerida</span></div>
+                    <div ng-message="minlength">La contraseña debe tener como mínimo 4 caracteres</div>
+                </div>
+            </md-input-container>
+
+
+              <md-button type="button" ng-click="onSubmit(command)" class="md-raised md-accent submit-button" aria-label="Ingresar"
+                         ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                  Cambiar
+              </md-button>
+          </form>
+
+          <div class="separator">
+              <span class="text" ></span>
+          </div>
+
+          <p style="color: red;">Tu ingreso es valido, pero debes crear una contraseña nueva</p>
+
+          
+      </div>
+  </div>
+</div>

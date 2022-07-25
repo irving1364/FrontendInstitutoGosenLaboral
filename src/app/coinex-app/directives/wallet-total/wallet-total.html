@@ -1,0 +1,51 @@
+<style>
+
+	.wallet_total {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		background: /*#4bdd5e; #e04a4a*/white; 
+		padding: 20px;
+		color: black;
+		border: 1px solid transparent;
+		font-size: 1.4em;
+	}
+
+	.wallet_total:hover {
+		
+	}
+
+	.wallet_total__saldo_label {
+		/*text-decoration-line: underline;*/
+	}
+
+	.wallet_total__saldo_amount {
+	}
+
+	.wallet_total__saldo_amount.negativo {
+		color: red;
+	}
+
+	.wallet_total__saldo_amount.positivo {
+		color: green;
+	}
+
+	.wallet_total__saldo_amount span:last-child {
+		/*font-style: italic;*/
+		color: #ff9d00;
+	}
+
+	.wallet_total__saldo_amount span:first-child {
+		margin-right: 10px
+	}
+</style>
+
+
+<div layout class="wallet_total">
+	
+	<div flex="50" class="wallet_total__saldo_amount">
+		<span>Saldo disponible:</span>
+		<span>{{walletSelected.balance | number: 6}}</span> 
+		<span>{{walletSelected.currency}}</span>
+	</div>
+
+</div>

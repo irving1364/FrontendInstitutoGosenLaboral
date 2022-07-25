@@ -1,0 +1,99 @@
+<div layout style="width: 500px" flex> <style>
+		.confirm_modal {
+			padding: 25px;
+		}
+		.confirm_modal.compra {
+
+		}
+		.confirm_modal.venta {
+			
+		}
+		.margin {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.cantidad_nominal {
+			margin-top: 0px;
+		}
+		.cantidad_nominal {
+			
+		}
+		.notificacion {
+			text-align: center;
+		}
+		.acciones {
+			
+		}
+		.cantidad span {
+			border: 1px solid silver;
+			padding: 10px;
+			display: inline-block;
+		}
+		.cantidad span:first-child {
+		}
+		.cantidad span:last-child {
+			border-left-color: transparent;
+		}
+		.cantidad_label {
+			margin-right: 20px;
+			text-align: right;
+		}
+		h2 {
+			padding: 0px;
+			margin: 0px;
+			color: #0e95b7;
+			font-weight: bold;
+		}
+	</style>
+
+	<div layout="column" class="confirm_modal compra" flex="100">
+		<h2 flex="100">
+			Elimine esta Nota aqui!
+		</h2>
+		<md-divider></md-divider>
+		<br>
+		<br>
+		<div flex="100" layout-align="center center" class="margin cantidad_nominal">
+			<div layout="row" layout-xs="column" 	>
+	
+				<div flex="100">
+					
+					<center>
+						<label>Esta seguro de eliminar la nota Titulada:</label>	
+						<br>
+						<br>
+						<label>{{command.titulo }}</label>
+						<br>
+					</center>	            
+					
+					
+					<br>
+                    <div layout="row" layout-wrap>
+                      <div flex="25">
+                      </div>
+                      <div flex="20">
+                        <md-button  type="button" ng-click="onSubmit(command)" class="md-raised md-primary">&nbsp Eliminar &nbsp</md-button>
+                      </div>
+
+                      <div flex="10">
+                      </div>	
+
+                      <div flex="20">  
+                        <md-button  type="button" ng-click="close()" class="md-raised">&nbsp Cancel &nbsp</md-button>
+                      </div>
+
+                    </div> 
+
+
+				</div>
+
+			</div>
+			<br>
+
+		</div>
+	</div>	
+	<br>
+	<md-divider></md-divider>	
+</div>
+
+	

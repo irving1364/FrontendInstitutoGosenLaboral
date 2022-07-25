@@ -1,0 +1,35 @@
+[
+    {
+        "balance": "2.1231232",
+        "currency": "BTC",
+        "depositText": "",
+        "fiat": "false",
+        "receiveAddres": "asfdsdfsdfsd234234235"        
+    }, {
+        "balance": "0",
+        "currency": "DOG",
+        "depositText": "",
+        "fiat": "false"        
+    }, {
+        "balance": "0",
+        "currency": "LTC",
+        "depositText": "",
+        "fiat": "false"        
+    }, {
+        "balance": "0",
+        "currency": "USD",
+        "depositText": "",
+        "fiat": "true"        
+    }, {
+        "balance": "0",
+        "currency": "ETH",
+        "depositText": "",
+        "fiat": "false"        
+    }, {
+        "balance": "0",
+        "currency": "DRAGLET",
+        "depositText": "",
+        "fiat": "false"        
+    } 
+    
+]

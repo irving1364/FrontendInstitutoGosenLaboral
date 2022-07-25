@@ -1,0 +1,98 @@
+<style>
+	.dialogdemoBasicUsage #popupContainer {
+		position: relative;
+	}
+	.dialogdemoBasicUsage .footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+		font-size: 0.8em;
+		margin-top: 50px;
+	}
+	.dialogdemoBasicUsage button {
+		width: 200px;
+	}
+	.dialogdemoBasicUsage div#status {
+		color: #c60008;
+	}
+	.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+		margin-bottom: 0;
+	}
+</style>
+
+
+<md-dialog aria-label="Asignar Materia" style=" width: 500px;">
+	<form name="formu" novalidate>
+	  <md-toolbar>
+		<div class="md-toolbar-tools">
+		  <h2>Asignar Materia al Grado</h2>
+		  <span flex></span>
+		  <md-button class="md-icon-button" ng-click="cancel()">
+			<i style="font-size: x-large;" class="fa-solid fa-delete-left" aria-label="Close dialog"></i>
+		  </md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+		<br>
+		  <md-input-container>
+			<label>Seleccione el Grado</label>
+			<md-select style="width: 350px;" ng-model="command.cod_curso_detail" required>
+				<md-option ng-repeat="curso in cursosSeccion" ng-value="curso.cod">
+				{{curso.curso}} - {{curso.seccion}} - {{curso.ano}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+
+		  <br>
+		<md-input-container>
+			<label>Seleccione la Materia</label>
+			<md-select style="width: 350px;" ng-model="command.cod_materia" required>
+				<md-option ng-repeat="materia in materias" ng-value="materia.cod">
+				{{materia.materia}}
+				</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container>
+			<label>Seleccione la Prioridad</label>
+			<md-select style="width: 350px;" ng-model="command.prioridad" required>
+				<md-option ng-value="1"> 1 </md-option>
+				<md-option ng-value="2"> 2 </md-option>
+				<md-option ng-value="3"> 3 </md-option>
+				<md-option ng-value="4"> 4 </md-option>
+				<md-option ng-value="5"> 5 </md-option>
+				<md-option ng-value="6"> 6 </md-option>
+				<md-option ng-value="7"> 7 </md-option>
+				<md-option ng-value="8"> 8 </md-option>
+				<md-option ng-value="9"> 9 </md-option>
+				<md-option ng-value="10"> 10 </md-option>
+				<md-option ng-value="11"> 11 </md-option>
+				<md-option ng-value="12"> 12 </md-option>
+				<md-option ng-value="13"> 13 </md-option>
+				<md-option ng-value="14"> 14 </md-option>
+				<md-option ng-value="15"> 15 </md-option>
+				<md-option ng-value="16"> 16 </md-option>
+				<md-option ng-value="17"> 17 </md-option>
+				<md-option ng-value="18"> 18 </md-option>
+				<md-option ng-value="19"> 19 </md-option>
+				<md-option ng-value="20"> 20 </md-option>
+			</md-select>
+		</md-input-container>
+
+		<!-- end ngIf: ::dialog.$type == 'prompt' -->
+	</md-dialog-content>
+	
+	  <md-dialog-actions layout="row">	
+		<span flex></span>
+		<md-button ng-click="cancel()" >
+		  Cancelar
+		</md-button>
+		<md-button ng-click="onSubmit(command)" ng-disabled="formu.$invalid" class="md-primary" md-autofocus>
+			Enviar
+		</md-button>
+	  </md-dialog-actions>
+	</form>
+  </md-dialog>

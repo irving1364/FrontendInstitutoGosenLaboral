@@ -1,0 +1,71 @@
+<style>
+	.dialogdemoBasicUsage #popupContainer {
+		position: relative;
+	}
+	.dialogdemoBasicUsage .footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+		font-size: 0.8em;
+		margin-top: 50px;
+	}
+	.dialogdemoBasicUsage button {
+		width: 200px;
+	}
+	.dialogdemoBasicUsage div#status {
+		color: #c60008;
+	}
+	.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+		margin-bottom: 0;
+	}
+</style>
+
+
+<md-dialog aria-label="Agregar Grados" style=" width: 500px;">
+	<form>
+	  <md-toolbar>
+		<div class="md-toolbar-tools">
+		  <h2>Agregar Grados</h2>
+		  <span flex></span>
+		  <md-button class="md-icon-button" ng-click="cancel()">
+			<i style="font-size: x-large;" class="fa-solid fa-delete-left" aria-label="Close dialog"></i>
+		  </md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+		<br>
+		<md-input-container md-no-float="" class="md-prompt-input-container ng-scope md-auto-horizontal-margin md-input-has-placeholder md-default-theme md-input-has-value" style="">
+			<input
+				ng-keypress="dialog.keypress($event)"
+				md-autofocus=""
+				ng-model="command.curso"
+				placeholder="Agregue un Grado"
+				class="ng-pristine ng-valid md-autofocus md-input ng-not-empty ng-valid-required ng-touched"
+				id="input_55"
+				required="required"
+				aria-invalid="false"
+				style=""
+			/>
+			<div class="md-errors-spacer"></div>
+		</md-input-container>
+		<!-- end ngIf: ::dialog.$type == 'prompt' -->
+	</md-dialog-content>
+	
+
+
+  
+	  <md-dialog-actions layout="row">
+		
+		<span flex></span>
+		<md-button ng-click="cancel()" >
+		  Cancelar
+		</md-button>
+		<md-button ng-click="onSubmit(command)" ng-disabled="!command.curso" class="md-primary" md-autofocus>
+			Enviar
+		</md-button>
+	  </md-dialog-actions>
+	</form>
+  </md-dialog>

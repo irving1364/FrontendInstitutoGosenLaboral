@@ -1,0 +1,220 @@
+<style>
+	.dialogdemoBasicUsage #popupContainer {
+		position: relative;
+	}
+	.dialogdemoBasicUsage .footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+		font-size: 0.8em;
+		margin-top: 50px;
+	}
+	.dialogdemoBasicUsage button {
+		width: 200px;
+	}
+	.dialogdemoBasicUsage div#status {
+		color: #c60008;
+	}
+	.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+		margin-bottom: 0;
+	}
+
+	.md-datepicker-input-container{
+		width: 78%;
+	}
+</style>
+
+
+<md-dialog aria-label="Editar la Evaluación" style=" width: 500px;">
+	<form name="formu" novalidate>
+	  <md-toolbar>
+		<div class="md-toolbar-tools">
+		  <h2>Editar la Evaluación</h2>
+		  
+		  <md-button class="md-icon-button" ng-click="cancel()" style="margin-left: auto;">
+			<i style="font-size: x-large;" class="fa-solid fa-delete-left" aria-label="Close dialog"></i>
+		  </md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+		<div class="row">
+
+			<md-input-container style="width: 420px;" flex="100">
+				<label>Seleccione el Trimestre</label>
+				<md-select name="trimestre" ng-model="command.trimestre" required>
+					<md-option ng-value="1">
+						Trimestre 1
+					</md-option>
+					<md-option ng-value="2">
+						Trimestre 2
+					</md-option>
+					<md-option ng-value="3">
+						Trimestre 3
+					</md-option>
+				</md-select>
+				<div ng-messages="formu.trimestre.$error" role="alert" multiple>
+					<div ng-message="required">
+						<span>El Trimestre es requerido</span>
+					</div>
+				</div>
+			</md-input-container>
+
+		</br>
+
+		
+		<md-input-container md-no-float="" class="md-prompt-input-container ng-scope md-auto-horizontal-margin md-input-has-placeholder md-default-theme md-input-has-value" style="width: 90%;">
+			<input
+				ng-keypress="dialog.keypress($event)"
+				md-autofocus=""
+				ng-model="command.nombre"
+				placeholder="Asunto"
+				class="ng-pristine ng-valid md-autofocus md-input ng-not-empty ng-valid-required ng-touched"
+				id="input_55"
+				required="required"
+				aria-invalid="false"
+				name="asunto"
+				ng-maxlength="100"
+			/>
+			<div ng-messages="formu.asunto.$error" role="alert" multiple>
+				<div ng-message="required">
+					<span>El Asunto es requerido</span>
+				</div>
+			</div>
+		</md-input-container>
+
+
+		<md-input-container md-no-float="" class="md-prompt-input-container ng-scope md-auto-horizontal-margin md-input-has-placeholder md-default-theme md-input-has-value" style="margin-top: -1%; width: 90%;">
+			<textarea
+				ng-keypress="dialog.keypress($event)"
+				md-autofocus=""
+				ng-model="command.descripcion"
+				placeholder="Descripción"
+				class="ng-pristine ng-valid md-autofocus md-input ng-not-empty ng-valid-required ng-touched"
+				id="descripcion"
+				required="required"
+				aria-invalid="false"
+				name="descripcion"
+				ng-maxlength="400"
+				rows="2">
+		</textarea>
+			<div ng-messages="formu.descripcion.$error" role="alert" multiple>
+				<div ng-message="required">
+					<span>La Descripción es requerido</span>
+				</div>
+			</div>
+		</md-input-container	
+		</br>	
+		
+			<md-input-container style="width: 420px;" flex="100">
+				<label>Tipo de Evaluacion</label>
+				<md-select ng-model="command.cod_tipo_evaluacion" name="tipo" required>
+					<md-option ng-value="1">
+						Nota Parciales
+					</md-option>
+					<md-option ng-value="2">
+						Nota de Apreciación
+					</md-option>
+					<md-option ng-value="3">
+						Examen Mensual
+					</md-option>
+					<md-option ng-value="4">
+						Examen trimestral
+					</md-option>					
+				</md-select>
+				<div ng-messages="formu.tipo.$error" role="alert" multiple>
+					<div ng-message="required">
+						<span>Tipo de Evaluacion es requerido</span>
+					</div>
+				</div>
+			</md-input-container>
+
+		</br>
+		</br>
+		<md-datepicker ng-model="command.fechas" md-placeholder="Ingresa la fecha"
+					   input-aria-describedby="datepicker-description" required
+					   input-aria-labelledby="datepicker-header" name="fecha">
+			<div ng-messages="formu.fecha.$error" role="alert" multiple>
+				<div ng-message="required">
+					<span>La Fecha es requerida</span>
+				</div>
+			</div>
+		</md-datepicker>
+		
+	</br>
+	</br>
+	</br>
+		
+	<md-input-container md-no-float="" class="md-prompt-input-container ng-scope md-auto-horizontal-margin md-input-has-placeholder md-default-theme md-input-has-value" style="width: 90%;">
+		<label for="input_55">Hora de Inicio</label>
+		<input
+			md-autofocus=""
+			ng-model="command.hora_inii"
+			min="07:00:00" max="23:59:59"
+			class="ng-pristine ng-valid md-autofocus md-input ng-not-empty ng-valid-required ng-touched"
+			id="input_55"
+			required="required"
+			aria-invalid="false"
+			type="time"
+			name="hora_ini"			
+		/>
+		<div ng-messages="formu.hora_ini.$error" role="alert" multiple>
+			<div ng-message="required">
+				<span>La Hora es requerida</span>
+			</div>
+		</div>
+		<span>La hora actual de Inicio es {{command.hora_ini}}</span>
+	</md-input-container>
+	
+	</br>
+	
+		
+	<md-input-container md-no-float="" class="md-prompt-input-container ng-scope md-auto-horizontal-margin md-input-has-placeholder md-default-theme md-input-has-value" style="width: 90%;">
+		<label for="input_55">Hora de Finalizar</label>
+		<input
+			md-autofocus=""
+			ng-model="command.hora_fiin"
+			min="07:00:00" max="23:59:59"
+			class="ng-pristine ng-valid md-autofocus md-input ng-not-empty ng-valid-required ng-touched"
+			id="input_55"
+			required="required"
+			aria-invalid="false"
+			type="time"
+			name="hora_fin"			
+		/>
+		<div ng-messages="formu.hora_fin.$error" role="alert" multiple>
+			<div ng-message="required">
+				<span>La Hora es requerida</span>
+			</div>
+		</div>
+		<span>La hora actual de Finalización es {{command.hora_fin}}</span>
+	</md-input-container>
+
+
+
+
+	
+		</div>
+		
+		<!-- end ngIf: ::dialog.$type == 'prompt' -->
+	</md-dialog-content>
+	 
+
+
+
+		<!-- end ngIf: ::dialog.$type == 'prompt' -->
+	</md-dialog-content>
+	
+	  <md-dialog-actions layout="row">	
+		<span flex></span>
+		<md-button ng-click="cancel()" >
+		  Cancelar
+		</md-button>
+		<md-button ng-click="onSubmit(command)" ng-disabled="formu.$invalid" class="md-primary" md-autofocus>
+			Enviar
+		</md-button>
+	  </md-dialog-actions>
+	</form>
+  </md-dialog>

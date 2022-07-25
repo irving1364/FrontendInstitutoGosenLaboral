@@ -1,0 +1,358 @@
+<div layout style="width: 500px" flex> <style>
+		.confirm_modal {
+			padding: 25px;
+		}
+		.confirm_modal.compra {
+
+		}
+		.confirm_modal.venta {
+			
+		}
+		.margin {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.cantidad_nominal {
+			margin-top: 0px;
+		}
+		.cantidad_nominal {
+			
+		}
+		.notificacion {
+			text-align: center;
+		}
+		.acciones {
+			
+		}
+		.cantidad span {
+			border: 1px solid silver;
+			padding: 10px;
+			display: inline-block;
+		}
+		.cantidad span:first-child {
+		}
+		.cantidad span:last-child {
+			border-left-color: transparent;
+		}
+		.cantidad_label {
+			margin-right: 20px;
+			text-align: right;
+		}
+		h2 {
+			padding: 0px;
+			margin: 0px;
+			color: #0e95b7;
+			font-weight: bold;
+		}
+	</style>
+
+	<div layout="column" class="confirm_modal compra" flex="100">
+		<h2 flex="100">
+			¡Edite esta Nota aqui!
+		</h2>
+		<md-divider></md-divider>
+		<br>
+		<br>
+		<div flex="100" layout-align="center center" class="margin cantidad_nominal">
+			<div layout="row" layout-xs="column" 	>
+	
+				<div flex="100">
+		            
+
+						<form name="Form" >
+
+                          <md-input-container class="md-block">
+                            <label>Titulo </label>
+                            <input  type="text" 
+                                    name="categoria" 
+                                    ng-model="command.titulo" 
+                                    required="" 
+                                    ng-maxlength="100"/>
+
+                            <div ng-messages="Form.categoria.$error" role="alert" multiple="">
+                              <div ng-message="required" class="my-message">Ingrese el titulo</div>
+                              <div ng-message="maxlength">El maximo de caracter permitios son 100</div>
+                            </div>
+                          </md-input-container>
+
+                          <md-input-container class="md-block">
+                            <label>Youtube </label>
+                            <input  type="text" 
+                                    name="categoria" 
+                                    ng-model="command.youtube" 
+                                    required="" 
+                                    ng-maxlength="1000"/>
+
+                            <div ng-messages="Form.categoria.$error" role="alert" multiple="">
+                              <div ng-message="required" class="my-message">Ingrese el Link</div>
+                              <div ng-message="maxlength">El maximo de caracter permitios son 100</div>
+                            </div>
+                          </md-input-container>
+
+
+
+                        <md-input-container class="md-block">
+                            <label>Contenido</label>
+                            <textarea name="nota" ng-model="command.contenido" required md-maxlength="1500">
+                              
+                            </textarea>
+                            <!--input  type="textarea" 
+                                    name="descripcion" 
+                                    ng-model="command.descripcion" 
+                                    ng-maxlength="150"/-->
+
+                            <div ng-messages="Form.descripcion.$error" role="alert" multiple="">
+                              
+                              <div ng-message="maxlength">El maximo de caracter permitios son 150</div>
+                            </div>
+                          </md-input-container>
+
+                          <div layout="row">
+
+                          <div flex="30">
+                              <md-input-container class="md-block">
+                              <label>Dia </label>
+                              <input  type="text" 
+                                      name="categoria" 
+                                      ng-model="command.dia" 
+                                      required="" />
+
+                              <div ng-messages="Form.categoria.$error" role="alert" multiple="">
+                                <div ng-message="required" class="my-message">Ingrese el Dia</div>
+                                <div ng-message="maxlength">El maximo de caracter permitios son 2</div>
+                              </div>
+                            </md-input-container>
+                          </div>
+
+                          <div flex="30">
+                              <div layout layout-align="center center" >
+                                   <md-input-container>
+                                    <label>Mes</label>
+                                    <md-select ng-model="command.mes"  required="">
+
+                                      <md-option ng-value="1" >
+                                        1
+                                      </md-option>
+                                      <md-option ng-value="2" >
+                                        2
+                                      </md-option>
+                                      <md-option ng-value="3" >
+                                        3
+                                      </md-option>
+                                      <md-option ng-value="4" >
+                                        4
+                                      </md-option>
+                                      <md-option ng-value="5" >
+                                        5
+                                      </md-option>
+                                      <md-option ng-value="6" >
+                                        6
+                                      </md-option>
+                                      <md-option ng-value="7" >
+                                        7
+                                      </md-option>
+                                      <md-option ng-value="8" >
+                                        8
+                                      </md-option>
+                                      <md-option ng-value="9" >
+                                        9
+                                      </md-option>
+                                      <md-option ng-value="10" >
+                                        10
+                                      </md-option>
+                                      <md-option ng-value="11" >
+                                        11
+                                      </md-option>
+                                      <md-option ng-value="12" >
+                                        12
+                                      </md-option>
+                                    </md-select>
+                                    <div ng-messages="Form.categoria.$error" role="alert" multiple="">
+                                      <div ng-message="required" class="my-message">Seleccione el mes</div>
+                                    </div>
+                                  </md-input-container>
+                              </div>
+                          </div>
+
+
+                          <div flex="30">
+                              <div layout layout-align="center center" >
+                                   <md-input-container>
+                                    <label>Año</label>
+                                    <md-select ng-model="command.ano"  required="">
+
+                                      <md-option ng-value="2019" >
+                                        2019
+                                      </md-option>
+                                      <md-option ng-value="2020" >
+                                        2020
+                                      </md-option>
+                                      <md-option ng-value="2021" >
+                                        2021
+                                      </md-option>
+                                    </md-select>
+                                    <div ng-messages="Form.categoria.$error" role="alert" multiple="">
+                                      <div ng-message="required" class="my-message">Seleccione el año</div>
+                                    </div>
+                                  </md-input-container>
+                              </div>
+                          </div>  
+
+                        </div> 
+
+
+         				
+                          <div layout="row" ng-if="command.imagen">
+								            Imagen destacada
+                            <div flex="95">
+	                          		<img style="width: 150px; height: 150px;" src="{{imagenUrl}}files/{{command.imagen}}" >
+	                          	</div>
+	                          	<div flex="5">
+	                          		<img style="margin-top: 60px;margin-left: 0px;" src="assets/varias/delete.png" ng-click="deleteImageNote(command, $event)">
+	                          	</div>
+	                        </div>
+
+                          <br>
+
+                          <div layout="row" ng-if="command.imagen1">
+                            Imagen referencia 1
+                            <div flex="95">
+                                <img style="width: 150px; height: 150px;" src="{{imagenUrl}}files/{{command.imagen1}}" >
+                              </div>
+                              <div flex="5">
+                                <img style="margin-top: 60px;margin-left: 0px;" src="assets/varias/delete.png" ng-click="deleteImageNote1(command, $event)">
+                              </div>
+                          </div>
+
+                          <br>
+
+                          <div layout="row" ng-if="command.imagen2">
+                            Imagen referencia 2
+                            <div flex="95">
+                                <img style="width: 150px; height: 150px;" src="{{imagenUrl}}files/{{command.imagen2}}" >
+                              </div>
+                              <div flex="5">
+                                <img style="margin-top: 60px;margin-left: 0px;" src="assets/varias/delete.png" ng-click="deleteImageNote2(command, $event)">
+                              </div>
+                          </div>
+
+                          <br>
+
+                          <div layout="row" ng-if="command.imagen3">
+                            Imagen referencia 3
+                            <div flex="95">
+                                <img style="width: 150px; height: 150px;" src="{{imagenUrl}}files/{{command.imagen3}}" >
+                              </div>
+                              <div flex="5">
+                                <img style="margin-top: 60px;margin-left: 0px;" src="assets/varias/delete.png" ng-click="deleteImageNote3(command, $event)">
+                              </div>
+                          </div> 
+
+	                        <div layout="row" ng-if="!command.imagen">
+								              <div flex="70">
+	                          		<label>Seleccione una imagen para destacar esta nota</label>
+		                            <br>
+		                            <input style="margin-top: 15px; margin-bottom: 15px;" type="file" name="imagen" ng-model="command.imagen" uploader-model="command.imagen" required="">
+	                          	</div>
+	                          	<div flex="30" style="margin-top: 15px;">
+	                          		<md-button type="button" ng-click="uploadImage(command)" class="md-raised md-primary">&nbsp Subir &nbsp</md-button>
+	                          	</div>
+	                        </div>
+
+                          <div layout="row" ng-if="!command.imagen1">
+                              <div flex="70">
+                                <label>Seleccione una imagen para destacar esta nota</label>
+                                <br>
+                                <input style="margin-top: 15px; margin-bottom: 15px;" type="file" name="imagen" ng-model="command.imagen1" uploader-model="command.imagen1" required="">
+                              </div>
+                              <div flex="30" style="margin-top: 15px;">
+                                <md-button type="button" ng-click="uploadImage1(command)" class="md-raised md-primary">&nbsp Subir &nbsp</md-button>
+                              </div>
+                          </div>
+
+                          <div layout="row" ng-if="!command.imagen2">
+                              <div flex="70">
+                                <label>Seleccione una imagen para destacar esta nota</label>
+                                <br>
+                                <input style="margin-top: 15px; margin-bottom: 15px;" type="file" name="imagen" ng-model="command.imagen2" uploader-model="command.imagen2" required="">
+                              </div>
+                              <div flex="30" style="margin-top: 15px;">
+                                <md-button type="button" ng-click="uploadImage2(command)" class="md-raised md-primary">&nbsp Subir &nbsp</md-button>
+                              </div>
+                          </div>  		
+
+                          <div layout="row" ng-if="!command.imagen3">
+                              <div flex="70">
+                                <label>Seleccione una imagen para destacar esta nota</label>
+                                <br>
+                                <input style="margin-top: 15px; margin-bottom: 15px;" type="file" name="imagen" ng-model="command.imagen3" uploader-model="command.imagen3" required="">
+                              </div>
+                              <div flex="30" style="margin-top: 15px;">
+                                <md-button type="button" ng-click="uploadImage3(command)" class="md-raised md-primary">&nbsp Subir &nbsp</md-button>
+                              </div>
+                          </div>
+	                        
+	                        <br>
+	                        <md-divider>
+	                        </md-divider>
+
+	                        <!--label>
+	                        	Estas Seccion subiras imagenes que no seran las destacadas, pero las puede subir para acompañar a la nota
+	                        </label>
+
+	                        <br>
+	                        <br>
+
+	                        <div layout="row" ng-if="command.imagen_com1">
+								<div flex="95">
+	                          		<img style="width: 150px; height: 150px;" src="http://localhost/farmaBack/files/{{command.imagen_com1}}" >
+	                          	</div>
+	                          	<div flex="5">
+	                          		<img style="margin-top: 60px;margin-left: 0px;" src="assets/varias/delete.png" ng-click="deleteImageNote(command, $event)">
+	                          	</div>
+	                        </div-->
+
+
+
+	                          
+                    </div>
+                    
+                    <div flex="20">
+
+                    </div>
+                </div>    
+
+                	<md-divider>
+                    </md-divider>
+                    
+                    <div layout="row" layout-wrap>
+                    		
+                      <div flex="40">
+                      </div>
+                      <div flex="40">
+                        <md-button ng-disabled="!Form.$valid"  type="button" ng-click="onSubmit(command)" class="md-raised md-primary">&nbsp Editar &nbsp</md-button>
+                      </div>
+                    </div>
+                  </form> 
+
+
+				</div>
+
+			</div>
+			<br>
+
+		</div>
+	</div>	
+	<br>
+	<md-divider></md-divider>	
+</div>
+
+<div layout layout-align="end center" flex="100" class="margin acciones">
+	<md-button class="md-raised" ng-click="cancel()">
+		{{text.botonCancelar}}
+	</md-button>
+	<!--md-button class="md-raised md-primary" ng-click="execute(command)">
+		Agregar al plato
+	</md-button-->
+</div>
+	

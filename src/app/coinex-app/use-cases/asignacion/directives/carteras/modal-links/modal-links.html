@@ -1,0 +1,39 @@
+<style>
+	.modal_title {
+		padding: 20px; 
+		border-bottom: 1px solid silver;
+		font-size: 1.2em;
+		color: #075777
+	}
+</style>
+
+
+<md-dialog-content>
+
+			<CENTER>Links</CENTER>
+  <div class="md-dialog-content">
+      <div layout layout="row" flex="100" class="form_row" layout-align="center center">
+
+		<div flex="20"></div>
+		<div flex="80">
+		
+			<div ng-repeat="links in linksVerificados track by $index">
+				 
+			<a href="{{links}}" target="_blank"><span>{{links}}</span></a>
+				 
+			</div>
+
+		</div>
+		
+	</div>
+  </div>
+</md-dialog-content>
+<br>
+<md-divider></md-divider>
+<md-dialog-actions layout="row" layout-align="end center" class="actions">
+  <md-button   
+    ng-click="close()" 
+    class="md-raised md-primary">
+    Cerrar
+  </md-button>
+</md-dialog-actions>

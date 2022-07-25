@@ -1,0 +1,52 @@
+<md-dialog flex="50" class="deposito_text_modal" layout="column">
+
+	<div class="title" layout layout-align="center center">
+    <div flex="70">
+Introduzca la siguiente autenticación de dos factores:</div>
+    <md-button flex="30"
+          style="text-align: right; color: gray"
+          ng-click="hide()"
+          class="md-icon-button">
+          <i class="fa fa-times"></i>
+    </md-button>
+	</div>
+
+	<md-dialog-content class="content" layout="column">
+    <form name="authEmailForm">
+      
+		<div layout class="form_row" layout-align="center center">
+	      	<label flex="30">
+		        E-Mail Auth:
+	      	</label>
+      		<div class="form-control single" flex="100" layout>
+          		<input 
+            		flex="80"
+            		type="text" 
+                required="" 
+            		class="form-control" 
+                name="emailAuth"
+            		ng-model="command.emailAuth"
+                minlength=4>
+      			<div ng-messages="authEmailForm.emailAuth.$error">
+              		<div ng-message="required" class="my-message">
+                      
+              		</div>
+            	</div>
+      		</div>
+  		</div>
+
+
+    </form>
+	</md-dialog-content>
+
+
+	<md-dialog-actions layout="row" class="actions">
+  		<md-button
+          ng-disabled="authEmailForm.$invalid" 
+      		ng-click="submit(command)"
+      		class="md-raised md-primary">
+      		Agregar
+  		</md-button>
+    </md-dialog-actions>
+
+</md-dialog>

@@ -1,0 +1,98 @@
+<style>
+  .progress-bar-bid {
+      float: left;
+      width: 0;
+      height: 100%;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      background-color: #2fa4e7;
+      -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+      -webkit-transition: width .6s ease;
+      transition: width .6s ease;
+      margin: 0px 10px 0px;
+  }
+  .progress-bar-ask {
+      float: left;
+      width: 0;
+      height: 100%;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      background-color: #F56D09;
+      -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+      box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+      -webkit-transition: width .6s ease;
+      transition: width .6s ease;
+      margin: 0px 5px 0px;
+  }
+  .even {
+    background-color: #E6EDF8;
+  }
+  
+  .odd {
+    background-color: #ffffff;
+  }
+
+</style>
+
+
+<div class="frame-content flex layout-padding">
+        <div layout="row">
+          <span class="tittle-content">Cartera de Ordenes</span>
+        </div>
+        
+        <md-divider></md-divider>
+
+        <div layout="row" layout-wrap>
+          <div flex="20" align="center">OFERTA</div>
+          <div flex="60" align="center"></div>
+          <div flex="20" align="center">DEMANDA</div>
+        </div>
+
+        
+        <div layout="row" layout-wrap class="table-content">
+          <div flex="20" align="center">{{marketSelect.nominalCurrency}}</div>
+          <div flex="60" align="center">UDS/BTC</div>
+          <div flex="20" align="center">BTC</div>
+        </div>
+
+        <md-divider></md-divider>
+
+        <div layout="row" layout-wrap layout-align="start" 
+          ng-repeat="order in dates.orders" ng-class-even="'even'" ng-class-odd="'odd'" >
+
+              <div flex="20" flex-xs="20" >
+                <div 
+                  class="progress-bar-bid " 
+                  ng-style="{'width': 100 * order[3] / dates.mayorBid + '%'}" 
+                  style="float: left;">
+                </div>
+              </div>
+
+              <div flex="15" flex-xs="15" align="center">
+                {{order[3] | number:2}}
+              </div>
+
+              <div flex="15" flex-xs="15" align="center">
+                {{order[2] | number:2}}
+              </div>
+
+              <div flex="15" flex-xs="15" align="center">
+                {{order[0] | number:2}}
+              </div>
+
+              <div flex="15" flex-xs="15" align="center">
+                {{order[1] | number:2}}
+              </div>
+              
+              <div flex="20" flex-xs="20" align="center">
+                <div 
+                  class="progress-bar-ask" 
+                  ng-style="{'width': 100 * order[1] / dates.mayorAsk + '%'}" 
+                  style="float: right;" >  
+                </div>
+              </div>
+        </div>    
+</div>

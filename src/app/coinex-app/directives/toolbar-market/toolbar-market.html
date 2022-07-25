@@ -1,0 +1,44 @@
+<div layout="row" layout-align="start center">
+    <div layout="row" layout-align="start center" flex>
+        
+        <md-menu-bar id="user-menu" role="menubar" class="_md md-default-theme md-keyboard-mode"><button class="user-button md-button ng-scope md-default-theme md-ink-ripple hide-gt-sm" 
+            type="button" ng-click="toggleSidenav('navigation')" aria-label="User settings"  hide-gt-sm="">
+            <div layout="row" layout-align="space-between center" class="ng-scope layout-align-space-between-center layout-row">
+                <md-icon class="icon md-default-theme md-font material-icons 
+                         " role="img" aria-hidden="true">
+                    <i class="fa-solid fa-bars"></i>
+                </md-icon></div>
+            <div class="md-ripple-container" ></div></button><div class="toolbar-separator"></div>
+        </md-menu-bar>
+
+        <!--md-menu-bar id="user-menu">
+            <md-menu md-position-mode="right bottom">
+                <md-button class="user-button" ng-click="createTheme($event);"
+                           aria-label="User settings"
+                           translate translate-attr-aria-label="TOOLBAR.USER_SETTINGS">
+                    <div layout="row" layout-align="space-between center">
+                        <span class="username" >Temas</span>
+                    </div>
+                </md-button>
+            </md-menu>
+        </md-menu-bar-->
+    <div class="toolbar-separator"></div>
+    <span  style="margin-left: 10px; margin-right: 10px; font-size: medium;">Año: {{anio}}  </span>
+    <div class="toolbar-separator"></div>
+     
+    <span  style="margin-left: 20px; font-size: medium;">Gestion Académica - Laboral</span> 
+
+    </div>
+
+    <div layout="row" layout-align="start center">
+
+        <md-progress-circular id="toolbar-progress" ng-disabled="!$root.loadingProgress"  class="md-accent" md-diameter="32">
+        </md-progress-circular>
+
+
+        <user>
+        </user>
+
+        <div class="toolbar-separator"></div>
+    </div>
+</div>

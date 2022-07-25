@@ -1,0 +1,68 @@
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+    <div layout="column" layout-align="center start">
+        <div class="title" style="font-size: 24px;">Tablero</div>
+    </div>
+  </div>
+  <!-- / HEADER -->
+
+  <!-- CONTENT -->
+  <div class="content">
+      
+    <div class="widget-group" layout="row" flex="100" layout-wrap>
+      <!-- WIDGET 5 -->
+      <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+        <!-- Front -->
+        <ms-widget-front class="p-16 white-bg" layout="row" flex>
+            <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+                <div class="md-display-1 pb-8">{{command.estudianCount}}</div>
+                <div class="font-weight-500 secondary-text">ESTUDIANTES</div>
+            </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+    </ms-widget>
+    <!-- / WIDGET 5 -->
+
+    <!-- WIDGET 5 -->
+    <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+      <!-- Front -->
+      <ms-widget-front class="p-16 white-bg" layout="row" flex>
+          <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+              <div class="md-display-1 pb-8">{{command.maestrosCount}}</div>
+              <div class="font-weight-500 secondary-text">DOCENTES</div>
+          </div>
+      </ms-widget-front>
+      <!-- / Front -->
+
+  </ms-widget>
+  <!-- / WIDGET 5 -->
+
+    <!-- WIDGET 6 -->
+    <ms-widget class="h-140" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+
+        <!-- Front -->
+        <ms-widget-front class="p-16 white-bg" layout="row" flex>
+            <div class="pt-8 pb-8" layout="column" layout-align="center center" flex>
+                <div class="md-display-1 pb-8">{{command.cursoCount}}</div>
+                <div class="font-weight-500 secondary-text pb-8">GRADOS</div>
+            </div>
+        </ms-widget-front>
+        <!-- / Front -->
+
+    </ms-widget>
+    <!-- / WIDGET 6 -->
+
+    
+  <!-- / WIDGET 6 -->
+    </div>
+
+
+  </div>
+  <!-- / CONTENT -->
+
+</div>

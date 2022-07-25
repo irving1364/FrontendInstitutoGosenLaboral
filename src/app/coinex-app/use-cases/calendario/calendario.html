@@ -1,0 +1,70 @@
+
+<div id="board-calendar" class="page-layout simple right-sidenav" flex layout="row"
+ng-class="vm.board.settings.color+'-100-bg'">
+
+<!-- CALENDAR -->
+<div id="calendar" class="md-whiteframe-2dp" flex layout="column" ng-class="currentMonthShort">
+
+   <!-- CALENDAR HEADER -->
+   <div class="calendar-header" layout="row" layout-align="space-between center" layout-xs="column">
+
+       <div class="" layout="row" layout-align="start center">
+           <md-button class="md-icon-button arrow" ng-click="prev()" aria-label="Previous"
+                      translate translate-attr-aria-label="SB.PREVIOUS">
+               <md-icon><i class="fa-solid fa-angle-left"></i></md-icon>
+           </md-button>
+
+           <div class="title">
+               {{vm.calendarView.title}}{{currentMonthShort}} - {{currentYear}}
+           </div>
+
+           <md-button class="md-icon-button arrow" ng-click="next()" aria-label="Next" translate
+                      translate-attr-aria-label="SB.NEXT">
+               <md-icon><i class="fa-solid fa-angle-right"></i></md-icon>
+           </md-button>
+       </div>
+
+       <div>
+
+           <md-button class="md-icon-button" ng-click="goToDateToday()" aria-label="Today" translate
+                      >
+               <md-icon><i class="fa-solid fa-rotate-right"></i></md-icon>
+               <md-tooltip><span>Hoy</span></md-tooltip>
+           </md-button>
+
+           <md-button class="md-icon-button" ng-click="changeView('basicDay')" aria-label="Dia">
+               <md-icon><i class="fa-solid fa-calendar-day"></i></md-icon>
+               <md-tooltip><span>Dia</span></md-tooltip>
+           </md-button>
+
+           <md-button class="md-icon-button" ng-click="changeView('basicWeek')" aria-label="Semana">
+               <md-icon><i class="fa-solid fa-calendar-days"></i></md-icon>
+               <md-tooltip><span>Semana</span></md-tooltip>
+           </md-button>
+
+           <md-button class="md-icon-button" ng-click="changeView('month')" aria-label="Mes">
+               <md-icon><i class="fa-regular fa-calendar-days"></i></md-icon>
+               <md-tooltip><span>Mes</span></md-tooltip>
+           </md-button>
+       </div>
+   </div>
+   <!-- / CALENDAR HEADER -->
+
+   <!-- CALENDAR MAIN -->
+   <div ng-if="eventSources" class="calendar-main" ms-scroll flex ui-calendar="uiConfig.calendar" ng-model="eventSources"
+        calendar="myCalendar"></div>
+
+    <!--div class="pull-left">
+        <md-button class="md-raised" ng-click="changeView('month')">month</md-button>
+        <md-button class="md-raised" ng-click="changeView('basicWeek')">week</md-button>
+        <md-button class="md-raised" ng-click="changeView('basicDay')">day</md-button>
+    </div>    
+    
+    <div ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"-->
+        
+        <!-- / CALENDAR MAIN -->
+
+</div>
+<!-- / CALENDAR -->
+
+</div>

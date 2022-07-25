@@ -1,0 +1,86 @@
+<style>
+	.dialogdemoBasicUsage #popupContainer {
+		position: relative;
+	}
+	.dialogdemoBasicUsage .footer {
+		width: 100%;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+		font-size: 0.8em;
+		margin-top: 50px;
+	}
+	.dialogdemoBasicUsage button {
+		width: 200px;
+	}
+	.dialogdemoBasicUsage div#status {
+		color: #c60008;
+	}
+	.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+		margin-bottom: 0;
+	}
+
+	.md-datepicker-input-container{
+		width: 78%;
+	}
+</style>
+
+
+<md-dialog aria-label="Evalue la Evaluación" style=" width: 500px;">
+	<form name="formu" novalidate>
+	  <md-toolbar>
+		<div class="md-toolbar-tools">
+		  <h2>Evalue la Evaluación</h2>
+		  
+		  <md-button class="md-icon-button" ng-click="cancel()" style="margin-left: auto;">
+			<i style="font-size: x-large;" class="fa-solid fa-delete-left" aria-label="Close dialog"></i>
+		  </md-button>
+		</div>
+	</md-toolbar>
+
+	<md-dialog-content class="md-dialog-content" role="document" tabindex="-1" id="dialogContent_54">
+		<div class="row">
+
+			<md-input-container class="md-block" >
+				<label>Nota</label>
+				<md-icon><i class="fa-solid fa-arrow-up-1-9"></i></md-icon>
+				<input ng-model="command.puntuacion" type="number" step="0.1" max="5" min="0">
+			</md-input-container>
+
+
+		</br>
+		  <md-input-container class="md-block">
+			<label>Comentario</label>
+			<textarea ng-model="command.comentario_maestro" md-maxlength="200" rows="5" md-select-on-focus>
+			</textarea>
+		  </md-input-container>
+			
+		</div>
+		
+		<label>
+			<span style="font-style: italic; font-weight: 600;">
+				Si necesita agregar archivo de correción, dirigirse a la siguiente ventana.
+			</span>
+		</label>
+
+		<!-- end ngIf: ::dialog.$type == 'prompt' -->
+	</md-dialog-content>
+	 
+
+
+
+		<!-- end ngIf: ::dialog.$type == 'prompt' -->
+	</md-dialog-content>
+	
+	  <md-dialog-actions layout="row">	
+		<span flex></span>
+		<md-button ng-click="cancel()" >
+		  Cancelar
+		</md-button>
+		<md-button ng-click="onSubmit(command)" ng-disabled="formu.$invalid" class="md-primary" md-autofocus>
+			Enviar
+		</md-button>
+	  </md-dialog-actions>
+	</form>
+  </md-dialog>

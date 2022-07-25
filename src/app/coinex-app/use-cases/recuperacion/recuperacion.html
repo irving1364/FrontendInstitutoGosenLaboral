@@ -1,0 +1,47 @@
+<div id="login" class="flex-scrollable" layout="column" ms-scroll>
+  <div id="login-form-wrapper" layout="column" layout-align="center center">
+      <div id="login-form" class="md-whiteframe-8dp">
+        <img src="assets/varias/OK_LOGO.png" alt="">
+      </img>
+          <!--div class="logo md-accent-bg">
+              <span>G</span>
+          </div-->
+
+          <div class="title" >¡Recupera tu Contraseña!</div>
+
+          <form name="loginForm" novalidate>
+            
+              <md-input-container class="md-block" md-no-float>
+                  <input type="text" name="password" ng-model="command.user" placeholder="Usuario"
+                         required>
+                  <div ng-messages="loginForm.password.$error" role="alert">
+                      <div ng-message="required">
+                          <span>El usuario es requerido</span>
+                      </div>
+                  </div>
+              </md-input-container>
+
+              <md-input-container style="margin-top: -2%;">
+                <label>Seleccione el Año</label>
+                <md-select style="width: 320px;" ng-model="command.cod_anio" required>
+                  <md-option ng-repeat="anios in anio" ng-value="anios.cod">
+                    {{anios.anio}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+
+
+              <md-button type="button" ng-click="onSubmit(command)" class="md-raised md-accent submit-button" aria-label="Ingresar"
+                         ng-disabled="loginForm.$invalid || loginForm.$pristine">
+                  Recuperar
+              </md-button>
+          </form>
+
+          <div class="separator">
+              <span class="text" ></span>
+          </div>
+
+          <p style="color: red;">Debes tener tu correo electronico agregado en tu perfil.</p>              
+      </div>
+  </div>
+</div>

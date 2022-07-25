@@ -1,0 +1,48 @@
+<style>
+	
+	.wallet {
+		border: 1px solid silver;
+		text-align: center;
+		padding: 20px 30px;
+		position: relative;
+		margin: 20px;
+		width: 140px;
+		height: 100px;
+	}
+
+	.wallet--selected, .wallet:hover{
+		border: 1px solid #ff9d00;
+		cursor: pointer;
+	}
+
+	.wallet__check_icon {
+		top: -5px;
+		right: -10px;
+		position: absolute;
+		color: #ff9d00;
+		font-weight: normal;
+		background-color: white
+	}
+
+	.wallet__img {
+		width: 32px;
+		height: 32px;
+		display: inline-block;
+	}
+
+
+</style>
+
+<div 
+	class="wallet" 
+	layout="column"
+	layout-align="center center"
+	ng-class="{'wallet--selected': walletSelectExpresion}"
+	ng-click="selected(wallet)">
+	<img class="wallet__img" src="{{wallet.icon}}">
+	<div>{{wallet.nick}}</div>
+	<span class="wallet__check_icon" ng-if="walletSelectExpresion">
+		<i class="icon-checkbox-marked-circle"></i>
+	</span>
+	</div>
+</div>

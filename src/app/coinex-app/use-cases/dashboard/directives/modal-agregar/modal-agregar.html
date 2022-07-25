@@ -1,0 +1,99 @@
+<div layout style="width: 100%" flex> <style>
+		.confirm_modal {
+			padding: 25px;
+		}
+		.confirm_modal.compra {
+
+		}
+		.confirm_modal.venta {
+			
+		}
+		.margin {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.cantidad_nominal {
+			margin-top: 0px;
+		}
+		.cantidad_nominal {
+			
+		}
+		.notificacion {
+			text-align: center;
+		}
+		.acciones {
+			
+		}
+		.cantidad span {
+			border: 1px solid silver;
+			padding: 10px;
+			display: inline-block;
+		}
+		.cantidad span:first-child {
+		}
+		.cantidad span:last-child {
+			border-left-color: transparent;
+		}
+		.cantidad_label {
+			margin-right: 20px;
+			text-align: right;
+		}
+		h2 {
+			padding: 0px;
+			margin: 0px;
+			color: #0e95b7;
+			font-weight: bold;
+		}
+	</style>
+
+	<div layout="column" class="confirm_modal compra" flex="100">
+		<h2 flex="100">
+			Agregue Archivos Aqui!
+		</h2>
+		<md-divider></md-divider>
+		<br>
+		<br>
+		<div flex="100" layout-align="center center" class="margin cantidad_nominal">
+			<div layout="row" layout-xs="column" 	>
+	
+				<div flex="100">
+					
+				  <lf-ng-md-file-input lf-files="files" lf-option="optoin08" lf-placeholder="Pick Image" lf-browse-label="Buscar" lf-remove-label="Delete" multiple drag preview ng-disabled="disabled06"></lf-ng-md-file-input>
+
+
+			
+					<!--input class="ng-hide" id="input-file-id" multiple type="file" />
+					<label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label-->
+
+
+					
+					<br>
+                    <div layout="row" layout-wrap>
+                      <div flex="25">
+                      </div>
+                      <div flex="20">
+                        <md-button  type="button" ng-click="onSubmit()" class="md-raised md-primary">&nbsp Enviar  &nbsp</md-button>
+                      </div>
+
+                      <div flex="10">
+                      </div>	
+
+                      <div flex="20">  
+                        <md-button  type="button" ng-click="close()" class="md-raised">&nbsp Cancel &nbsp</md-button>
+                      </div>
+
+                    </div> 
+
+
+				</div>
+
+			</div>
+			<br>
+
+		</div>
+	</div>	
+	<br>
+	<md-divider></md-divider>	
+</div>
+
+	

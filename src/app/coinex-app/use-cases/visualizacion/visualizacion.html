@@ -1,0 +1,244 @@
+<style>
+    body {
+        background-color: #FFFFFF;
+    }
+
+
+</style>
+
+
+<div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
+
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between" style="height: 100px; min-height: 100px;">
+      <div layout="column" layout-align="center start">
+          <div class="title" style="font-size: 24px;">Reportes Varios</div>
+      </div>
+  </div>
+
+
+<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Lista por Grados" ng-click="transitionToRegister()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-table-container>
+                <table md-table  multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="curso"><span>Grados</span></th>
+                      <th md-column md-order-by="seccion"><span>Seccion</span></th>
+                      <th md-column ><span>Reporte</span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row ng-repeat="curso in cursos | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{curso.cod | number}}</td>
+                      <td md-cell>{{curso.curso}}</td>
+                      <td md-cell>{{curso.seccion}}</td>
+                      <td md-cell>
+                       <span ng-click="reportSalon(curso.cod, curso)"> 
+                        <i class="fa-solid fa-print"></i>
+                        Lista
+                       </span>
+                       <span style="margin-left: 15px;" ng-click="reportMateriasDocenteSalon(curso.cod, curso)"> 
+                        <i class="fa-solid fa-print"></i>
+                        Materias
+                       </span>
+                      </td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{cursos.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+      </md-tab>
+      
+      <md-tab label="Boletin" ng-click="tabCursos()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <md-input-container flex="100">
+                    <label>Seleccione el Grado</label>
+                    <md-select style="width: 370px;" ng-model="command.cod_curso" ng-change="getEstuCurso(command)" required>
+                      <md-option ng-repeat="curso in cursos" ng-value="curso.cod">
+                      {{curso.curso}} - {{curso.seccion}}
+                      </md-option>
+                    </md-select>
+                  </md-input-container>
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="cedula"><span>Cedula</span></th>
+                      <th md-column md-order-by="nombres"><span>Nombres</span></th>
+                      <th md-column><span>Accion</span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row md-select="estudiante" md-select-id="estudiante.cod" md-auto-select  md-row ng-repeat="estudiant in estudiantesCurso | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{estudiant.cod}}</td>
+                      <td md-cell>{{estudiant.cedula}}</td>
+                      <td md-cell>{{estudiant.nombres}}</td>
+                      <td md-cell>
+                        <span ng-click="pdf(estudiant.cod)"> 
+                         <i class="fa-solid fa-print"></i>
+                         Boletin
+                        </span> 
+                       </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{estudiantesCurso.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Grados de los Docentes" ng-click="tabGrados()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <div flex="50">
+                    <md-input-container style="width: 100%;">
+                      <label>Seleccione el Docentes</label>
+                      <md-select ng-model="command.mae" ng-change="getDocentesCursos(command)" required>
+                        <md-option ng-repeat="mae in maestros" ng-value="mae">
+                        {{mae.cedula}} - {{mae.nombres}}
+                        </md-option>
+                      </md-select>
+                    </md-input-container>
+                  </div>
+                  <div flex="10">
+                  </div>  
+                  <div flex="20" ng-if="command.mae">
+                    <span style="font-size: 14px;" ng-click="pdfGenerarMateriasDocente(maestro, command.mae)"><i class="fa-thin fa-plus"></i> PDF </span>
+                  </div>
+    
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="curso"><span>Curso</span></th>
+                      <th md-column md-order-by="seccion"><span>Seccion</span></th>
+                      <th md-column md-order-by="materia"><span>Materia</span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row  md-auto-select  md-row ng-repeat="maestro in maestro | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{maestro.cod}}</td>
+                      <td md-cell>{{maestro.curso}}</td>
+                      <td md-cell>{{maestro.seccion}}</td>
+                      <td md-cell>{{maestro.materia}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{maestroCurso.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+
+
+      <md-tab label="Docentes" ng-click="tabDocentes()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <span style="font-size: 14px;" ng-click="pdfGenerarDocentes(docentes)"><i class="fa-thin fa-plus"></i> PDF </span>
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="cedula"><span>Cedula</span></th>
+                      <th md-column md-order-by="nombres"><span>Nombres</span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row md-row ng-repeat="docente in docentes | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{docente.cod}}</td>
+                      <td md-cell>{{docente.cedula}}</td>
+                      <td md-cell>{{docente.nombres}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{docentes.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+
+
+      <md-tab label="Consejeros" ng-click="tabConsejeros()">
+        <md-content class="md-padding">
+          
+          <div layout="row" layout-wrap>
+            <div flex="100">  
+              <md-toolbar class="md-table-toolbar md-default" >
+                <div class="md-toolbar-tools">
+                  <span style="font-size: 14px;" ng-click="pdfGenerarConsejeros(consejeros)"><i class="fa-thin fa-plus"></i> PDF </span>
+                </div>
+              </md-toolbar>
+              <md-table-container>
+                <table md-table multiple="{{options.multiSelect}}" ng-model="selected" md-progress="promise">
+                  <thead ng-if="!options.decapitate" md-head md-order="query.order" md-on-reorder="logOrder">
+                    <tr md-row >
+                      <th md-column md-order-by="cod"><span>Cod</span></th>
+                      <th md-column md-order-by="curso"><span>Curso</span></th>
+                      <th md-column md-order-by="seccion"><span>Seccion</span></th>
+                      <th md-column md-order-by="nombres"><span>Consejero</span></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body>
+                    <tr md-row md-row ng-repeat="consejero in consejeros | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit" >
+                      <td md-cell>{{consejero.cod}}</td>
+                      <td md-cell>{{consejero.curso}}</td>
+                      <td md-cell>{{consejero.seccion}}</td>
+                      <td md-cell>{{consejero.nombres}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </md-table-container>
+              <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{consejeros.count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+          </div>
+        </div>  
+        </md-content>
+      </md-tab>
+
+      
+      
+
+      
+      
+    </md-tabs>
+  </md-content>
+</div>
+
+</div>
